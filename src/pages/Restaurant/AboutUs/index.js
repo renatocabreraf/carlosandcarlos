@@ -35,8 +35,6 @@ function AboutUs() {
           label: "reservations",
           color: "info",
         }}
-        transparent
-        light
       />
       <MKBox
         minHeight="40vh"

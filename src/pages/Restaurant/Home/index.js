@@ -1,8 +1,11 @@
+import { useState, useEffect } from "react";
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
+import Icon from "@mui/material/Icon";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -20,9 +23,22 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/restaurant/antigua/slider5.jpg";
+import hero1 from "assets/images/restaurant/antigua/slider5.jpg";
+import hero2 from "assets/images/restaurant/chicago/slider1.jpg";
+import hero3 from "assets/images/restaurant/wilmette/wilmette-open-03.jpg";
+
+const heroSlides = [hero1, hero2, hero3];
 
 function Home() {
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       <DefaultNavbar
@@ -35,27 +51,38 @@ function Home() {
           label: "reservations",
           color: "info",
         }}
-        sticky
       />
       <MKBox
-        minHeight="85vh"
+        minHeight="100vh"
         width="100%"
         sx={{
-          backgroundImage: ({
-            palette: { gradients },
-            functions: { linearGradient, rgba },
-          }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          position: "relative",
           display: "grid",
           placeItems: "center",
+          overflow: "hidden",
         }}
       >
-        <Container>
+        {heroSlides.map((img, i) => (
+          <MKBox
+            key={i}
+            sx={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              transition: "opacity 1s ease-in-out",
+              opacity: i === slideIndex ? 1 : 0,
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.75))",
+              },
+            }}
+          />
+        ))}
+        <Container sx={{ position: "relative", zIndex: 2 }}>
           <Grid
             container
             item
@@ -74,15 +101,14 @@ function Home() {
               container
               sx={{ mb: 2 }}
             />
-            <MKTypography
-              variant="h1"
-              color="white"
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: { fontSize: size["3xl"] },
-              })}
-            >
-              Carlos & Carlos
-            </MKTypography>
+            <MKBox
+              component="img"
+              src={brandLogo}
+              alt="Carlos & Carlos"
+              width={{ xs: "80%", md: "400px" }}
+              mb={3}
+              sx={{ objectFit: "contain" }}
+            />
             <MKTypography variant="h4" color="white" fontWeight="light" opacity={0.9} mb={3}>
               Authentic Northern Italian & French Cuisine
             </MKTypography>
@@ -112,6 +138,33 @@ function Home() {
             </Stack>
           </Grid>
         </Container>
+        <MKBox
+          sx={{
+            position: "absolute",
+            bottom: 40,
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 2,
+            display: "flex",
+            gap: 1.5,
+          }}
+        >
+          {heroSlides.map((_, i) => (
+            <MKBox
+              key={i}
+              onClick={() => setSlideIndex(i)}
+              sx={{
+                width: 12,
+                height: 12,
+                borderRadius: "50%",
+                bgcolor: i === slideIndex ? "#C8A96B" : "rgba(255,255,255,0.5)",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                "&:hover": { bgcolor: "#C8A96B" },
+              }}
+            />
+          ))}
+        </MKBox>
       </MKBox>
       <Card
         sx={{
@@ -283,7 +336,7 @@ function Home() {
               </Grid>
               <Grid item xs={12} md={4}>
                 <FilledInfoCard
-                  variant="contained"
+                  variant="gradient"
                   color="info"
                   icon="location_on"
                   title="Wilmette, IL"

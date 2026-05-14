@@ -107,8 +107,6 @@ function Locations() {
           label: "reservations",
           color: "info",
         }}
-        transparent
-        light
       />
       <MKBox
         minHeight="40vh"

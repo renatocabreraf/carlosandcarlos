@@ -69,11 +69,6 @@ const routes = [
     route: "/pages/restaurant/contact-us",
     component: <ContactUs />,
   },
-  {
-    name: "reservations",
-    icon: <Icon>book_online</Icon>,
-    href: "tel:+50278722432",
-  },
 ];
 
 export default routes;

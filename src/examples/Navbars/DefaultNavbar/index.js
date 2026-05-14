@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -53,11 +53,24 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
+  const menuHidden = scrollY > 80;
+  const logoHidden = scrollY > 280;
+
   useEffect(() => {
-    // A function that sets the display state for the DefaultNavbarMobile.
+    function handleScroll() {
+      setPrevScrollY(scrollY);
+      setScrollY(window.scrollY);
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollY]);
+
+  useEffect(() => {
     function displayMobileNavbar() {
       if (window.innerWidth < breakpoints.values.lg) {
         setMobileView(true);
@@ -68,16 +81,8 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
       }
     }
 
-    /** 
-     The event listener that's calling the displayMobileNavbar function when 
-     resizing the window.
-    */
     window.addEventListener("resize", displayMobileNavbar);
-
-    // Call the displayMobileNavbar function to set the state with the initial value.
     displayMobileNavbar();
-
-    // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
@@ -97,7 +102,7 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
         }
       }}
       onMouseLeave={() => collapse && setDropdown(null)}
-      light={light}
+      light
     />
   ));
 
@@ -449,32 +454,41 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
     </Popper>
   );
 
+  const scrollUp = scrollY < prevScrollY;
+  const navVisible = scrollUp || scrollY < 20;
+
   return (
-    <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
-      <MKBox
-        py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
-        my={relative ? 0 : 2}
-        mx={relative ? 0 : 3}
-        width={relative ? "100%" : "calc(100% - 48px)"}
-        borderRadius="xl"
-        shadow={transparent ? "none" : "md"}
-        color={light ? "white" : "dark"}
-        position={relative ? "relative" : "absolute"}
-        left={0}
-        zIndex={3}
-        sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
-        })}
-      >
-        <MKBox display="flex" justifyContent="space-between" alignItems="center">
+    <MKBox
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
+      zIndex={1000}
+      sx={{
+        transition: "transform 0.3s ease",
+        transform: navVisible ? "translateY(0)" : "translateY(-100%)",
+      }}
+    >
+      <Container>
+        <MKBox
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            transition: "all 0.3s ease",
+            py: menuHidden && !logoHidden ? 0.5 : 1.5,
+          }}
+        >
           <MKBox
             component={Link}
             to="/"
             lineHeight={1}
-            py={transparent ? 1.5 : 0.75}
-            pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+            sx={{
+              transition: "all 0.3s ease",
+              mx: menuHidden ? "auto" : 0,
+              opacity: logoHidden ? 0 : 1,
+              visibility: logoHidden ? "hidden" : "visible",
+            }}
           >
             {brandLogo ? (
               <MKBox
@@ -485,31 +499,39 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
                 sx={{ objectFit: "contain", verticalAlign: "middle" }}
               />
             ) : (
-              <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
+              <MKTypography variant="button" fontWeight="bold" color="white">
                 {brand}
               </MKTypography>
             )}
           </MKBox>
           <MKBox
-            color="inherit"
             display={{ xs: "none", lg: "flex" }}
-            ml="auto"
-            mr={center ? "auto" : 0}
+            alignItems="center"
+            sx={{
+              transition: "all 0.3s ease",
+              opacity: menuHidden ? 0 : 1,
+              visibility: menuHidden ? "hidden" : "visible",
+              position: menuHidden ? "absolute" : "static",
+              pointerEvents: menuHidden ? "none" : "auto",
+            }}
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox
+            sx={{
+              transition: "all 0.3s ease",
+              opacity: menuHidden ? 0 : 1,
+              visibility: menuHidden ? "hidden" : "visible",
+              ml: { xs: "auto", lg: 0 },
+            }}
+          >
             {action &&
               (action.type === "internal" ? (
                 <MKButton
                   component={Link}
                   to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
+                  variant="gradient"
+                  color="info"
                   size="small"
                 >
                   {action.label}
@@ -520,12 +542,8 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
                   href={action.route}
                   target="_blank"
                   rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
+                  variant="gradient"
+                  color="info"
                   size="small"
                 >
                   {action.label}
@@ -537,7 +555,7 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
             lineHeight={0}
             py={1.5}
             pl={1.5}
-            color={transparent ? "white" : "inherit"}
+            color="white"
             sx={{ cursor: "pointer" }}
             onClick={openMobileNavbar}
           >
@@ -545,28 +563,24 @@ function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, s
           </MKBox>
         </MKBox>
         <MKBox
-          bgColor={transparent ? "white" : "transparent"}
-          shadow={transparent ? "lg" : "none"}
+          bgColor="white"
+          shadow="lg"
           borderRadius="xl"
-          px={transparent ? 2 : 0}
+          px={2}
         >
           {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
         </MKBox>
-      </MKBox>
+      </Container>
       {dropdownMenu}
       {nestedDropdownMenu}
-    </Container>
+    </MKBox>
   );
 }
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
   brand: "Carlos & Carlos",
-  transparent: false,
-  light: false,
   action: false,
-  sticky: false,
-  relative: false,
   center: false,
 };
 
@@ -575,8 +589,6 @@ DefaultNavbar.propTypes = {
   brand: PropTypes.string,
   brandLogo: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  transparent: PropTypes.bool,
-  light: PropTypes.bool,
   action: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.shape({
@@ -597,8 +609,6 @@ DefaultNavbar.propTypes = {
       label: PropTypes.string.isRequired,
     }),
   ]),
-  sticky: PropTypes.bool,
-  relative: PropTypes.bool,
   center: PropTypes.bool,
 };
 
