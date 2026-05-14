@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -14,55 +15,36 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/bg-coworking.jpeg";
+import bgImage from "assets/images/restaurant/antigua/c-c-desayunos-109.jpg";
+
+import antiguaMenu from "pages/Restaurant/Menus/data/antigua";
+import wilmetteMenu from "pages/Restaurant/Menus/data/wilmette";
+import chicagoMenu from "pages/Restaurant/Menus/data/chicago";
+
+const locations = [
+  { label: "Antigua Guatemala", key: "antigua", data: antiguaMenu, note: "IVA incluido. Se incluirá a la cuenta el 10% de propina." },
+  { label: "Wilmette, IL", key: "wilmette", data: wilmetteMenu, note: "Gluten free pasta +$2.50. 20% gratuity for parties of 8+." },
+  { label: "Arlington Heights, IL", key: "chicago", data: chicagoMenu, note: "Gluten free +$3. Splits +$3. 20% gratuity for parties of 6+." },
+];
 
 function Menus() {
-  const [activeTab, setActiveTab] = useState(0);
-  const handleTab = (event, newValue) => setActiveTab(newValue);
+  const [locTab, setLocTab] = useState(0);
+  const [catTab, setCatTab] = useState(0);
 
-  const categories = [
-    {
-      label: "Appetizers",
-      items: [
-        { name: "Guacamole Clásico", price: "$14", description: "Fresh avocado, lime, cilantro, tomato, and white onion. Served with house-made tortilla chips." },
-        { name: "Ceviche Tradicional", price: "$16", description: "Fresh lime-cured fish with tomato, onion, cilantro, and avocado." },
-        { name: "Chiles Rellenos", price: "$15", description: "Poblano peppers stuffed with cheese, bathed in tomato sauce." },
-        { name: "Elote Loco", price: "$10", description: "Grilled Mexican street corn with mayo, cotija cheese, chili powder, and lime." },
-      ],
-    },
-    {
-      label: "Main Courses",
-      items: [
-        { name: "Pepian Guatemalteco", price: "$24", description: "Traditional Guatemalan chicken stew with sesame and pumpkin seed sauce. Served with rice and hand-made corn tortillas." },
-        { name: "Carne Asada", price: "$28", description: "Grilled skirt steak with chimichurri, black beans, rice, and plantains." },
-        { name: "Pescado a la Veracruzana", price: "$26", description: "Pan-seared fish fillet with tomato-caper olive sauce, served with vegetables." },
-        { name: "Pollo en Jocón", price: "$22", description: "Chicken in a green tomatillo-cilantro sauce, served with rice and fried plantains." },
-      ],
-    },
-    {
-      label: "Desserts",
-      items: [
-        { name: "Flan de Caramelo", price: "$9", description: "Classic caramel flan with a smooth, creamy texture." },
-        { name: "Tres Leches Cake", price: "$10", description: "Sponge cake soaked in three milks, topped with whipped cream and fresh berries." },
-        { name: "Churros con Chocolate", price: "$8", description: "Crispy cinnamon churros served with warm chocolate dipping sauce." },
-      ],
-    },
-    {
-      label: "Cocktails",
-      items: [
-        { name: "Margarita Clásica", price: "$13", description: "Tequila, lime juice, triple sec, agave nectar." },
-        { name: "Paloma", price: "$12", description: "Tequila, grapefruit soda, lime, salt rim." },
-        { name: "Mojito Cubano", price: "$12", description: "White rum, mint, lime, sugar, soda water." },
-        { name: "Michelada", price: "$11", description: "Mexican beer with lime, clamato, hot sauce, and spices." },
-      ],
-    },
-  ];
+  const current = locations[locTab];
+
+  const handleLocChange = (e, v) => {
+    setLocTab(v);
+    setCatTab(0);
+  };
 
   return (
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
+        brandLogo={brandLogo}
         routes={routes}
         action={{
           type: "external",
@@ -113,7 +95,7 @@ function Menus() {
               Our Menu
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8}>
-              A celebration of Latin American flavors, crafted with tradition and passion.
+              Northern Italian & French cuisine. Pasta artesanal desde 1985.
             </MKTypography>
           </Grid>
         </Container>
@@ -130,18 +112,31 @@ function Menus() {
         }}
       >
         <Container sx={{ mt: 4, mb: 6 }}>
+          <AppBar position="static" color="transparent" sx={{ mb: 3 }}>
+            <Tabs value={locTab} onChange={handleLocChange} variant="fullWidth">
+              {locations.map((l) => (
+                <Tab key={l.key} label={l.label} />
+              ))}
+            </Tabs>
+          </AppBar>
+
           <Grid container justifyContent="center">
             <Grid item xs={12} lg={8}>
               <AppBar position="static" color="transparent" sx={{ mb: 4 }}>
-                <Tabs value={activeTab} onChange={handleTab} variant="scrollable" scrollButtons="auto">
-                  {categories.map((cat) => (
+                <Tabs
+                  value={catTab}
+                  onChange={(e, v) => setCatTab(v)}
+                  variant="scrollable"
+                  scrollButtons="auto"
+                >
+                  {current.data.map((cat) => (
                     <Tab key={cat.label} label={cat.label} />
                   ))}
                 </Tabs>
               </AppBar>
 
               <MKBox>
-                {categories[activeTab]?.items.map((item) => (
+                {current.data[catTab]?.items.map((item) => (
                   <MKBox
                     key={item.name}
                     display="flex"
@@ -157,16 +152,31 @@ function Menus() {
                       <MKTypography variant="h6" fontWeight="bold">
                         {item.name}
                       </MKTypography>
-                      <MKTypography variant="body2" color="text">
-                        {item.description}
-                      </MKTypography>
+                      {item.description && (
+                        <MKTypography variant="body2" color="text">
+                          {item.description}
+                        </MKTypography>
+                      )}
                     </MKBox>
-                    <MKTypography variant="h6" color="info" fontWeight="bold" sx={{ ml: 2, whiteSpace: "nowrap" }}>
+                    <MKTypography
+                      variant="h6"
+                      color="info"
+                      fontWeight="bold"
+                      sx={{ ml: 2, whiteSpace: "nowrap" }}
+                    >
                       {item.price}
                     </MKTypography>
                   </MKBox>
                 ))}
               </MKBox>
+
+              {current.note && (
+                <MKBox mt={4} p={2} bgColor="grey-100" borderRadius="md">
+                  <MKTypography variant="caption" color="text">
+                    {current.note}
+                  </MKTypography>
+                </MKBox>
+              )}
             </Grid>
           </Grid>
         </Container>

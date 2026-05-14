@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
-import Icon from "@mui/material/Icon";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -19,14 +18,16 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/restaurant/antigua/slider5.jpg";
 
 function Home() {
   return (
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
+        brandLogo={brandLogo}
         routes={routes}
         action={{
           type: "external",
@@ -69,7 +70,7 @@ function Home() {
             <MKBadge
               variant="contained"
               color="info"
-              badgeContent="Now Open in 3 Countries"
+              badgeContent="Since 1985 · Chicago"
               container
               sx={{ mb: 2 }}
             />
@@ -83,11 +84,11 @@ function Home() {
               Carlos & Carlos
             </MKTypography>
             <MKTypography variant="h4" color="white" fontWeight="light" opacity={0.9} mb={3}>
-              Latin American Kitchen & Bar
+              Authentic Northern Italian & French Cuisine
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mb={4} px={4}>
-              Authentic Latin American flavors crafted with passion. From the heart of Guatemala to
-              the tables of the United States.
+              Desde Chicago hasta Guatemala, tres generaciones de excelencia culinaria. Pasta fresca
+              artesanal, los mejores vinos y una experiencia gastron&oacute;mica &uacute;nica.
             </MKTypography>
             <Stack direction="row" spacing={2}>
               <MKButton
@@ -101,12 +102,12 @@ function Home() {
               </MKButton>
               <MKButton
                 component="a"
-                href="https://www.opentable.com/"
+                href="tel:+50278722432"
                 variant="outlined"
                 color="white"
                 size="large"
               >
-                Make a Reservation
+                Reserve Now
               </MKButton>
             </Stack>
           </Grid>
@@ -128,10 +129,10 @@ function Home() {
             <Grid container item xs={12} lg={9} sx={{ mx: "auto" }}>
               <Grid item xs={12} md={4}>
                 <DefaultCounterCard
-                  count={15}
+                  count={40}
                   suffix="+"
                   title="Years of Tradition"
-                  description="Bringing authentic Latin American flavors since 2010"
+                  description="Serving excellence since 1985 in Chicago"
                 />
               </Grid>
               <Grid item xs={12} md={4} display="flex">
@@ -142,7 +143,7 @@ function Home() {
                 <DefaultCounterCard
                   count={3}
                   title="Locations"
-                  description="Guatemala City, Los Angeles & Miami"
+                  description="Antigua · Wilmette · Arlington Heights"
                 />
                 <Divider
                   orientation="vertical"
@@ -151,10 +152,10 @@ function Home() {
               </Grid>
               <Grid item xs={12} md={4}>
                 <DefaultCounterCard
-                  count={50}
+                  count={100}
                   suffix="+"
                   title="Signature Dishes"
-                  description="A curated menu celebrating the best of Latin American cuisine"
+                  description="A curated menu of Northern Italian & French classics"
                 />
               </Grid>
             </Grid>
@@ -165,14 +166,27 @@ function Home() {
           <Container>
             <Grid container spacing={3} alignItems="center">
               <Grid item xs={12} lg={6}>
+                <MKBadge
+                  variant="contained"
+                  color="info"
+                  badgeContent="our legacy"
+                  container
+                  sx={{ mb: 2 }}
+                />
                 <MKTypography variant="h3" mb={1}>
-                  A Taste of Latin America
+                  A Chicago Legacy, Now Global
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  At Carlos & Carlos, every dish tells a story. From our grandmother&apos;s secret
-                  recados to the vibrant street food of Guatemala City, we bring the authentic
-                  flavors of Latin America to your plate. Our chefs source the freshest ingredients
-                  to create a dining experience that is both traditional and innovative.
+                  Desde 1985, Carlos & Carlos ha sido un referente de la alta cocina franco-italiana
+                  en Chicago. Fundado por los hermanos Montiel, nuestro restaurante de manteles
+                  blancos en Arlington Heights r&aacute;pidamente se gan&oacute; un lugar entre la
+                  &eacute;lite culinaria, atrayendo a celebridades como Tom Cruise, Robert De Niro y
+                  Paul Newman.
+                </MKTypography>
+                <MKTypography variant="body2" color="text" mb={2}>
+                  Hoy, con tres locaciones en dos pa&iacute;ses, seguimos honrando nuestra
+                  tradici&oacute;n de pasta fresca artesanal, los mejores cortes de carne y una
+                  carta de vinos incomparable.
                 </MKTypography>
                 <MKButton
                   component="a"
@@ -189,8 +203,8 @@ function Home() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="restaurant"
-                        title="Authentic Recipes"
-                        description="Traditional recipes passed down through generations"
+                        title="Pasta Artesanal"
+                        description="Pasta fresca hecha en casa diariamente, siguiendo recetas tradicionales italianas"
                       />
                     </MKBox>
                   </Grid>
@@ -198,8 +212,8 @@ function Home() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="local_shipping"
-                        title="Fresh Ingredients"
-                        description="Sourcing the finest local and imported ingredients"
+                        title="Ingredientes Premium"
+                        description="Los mejores ingredientes importados de Italia y productos locales frescos"
                       />
                     </MKBox>
                   </Grid>
@@ -207,16 +221,16 @@ function Home() {
                     <MKBox mb={{ xs: 3, md: 0 }}>
                       <DefaultInfoCard
                         icon="wine_bar"
-                        title="Curated Bar"
-                        description="Premium Latin American spirits and signature cocktails"
+                        title="Carta de Vinos"
+                        description="Extensa selección de vinos italianos y del mundo, cuidadosamente seleccionados"
                       />
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <DefaultInfoCard
                       icon="groups"
-                      title="Family Atmosphere"
-                      description="Warm, welcoming environment with genuine hospitality"
+                      title="Ambiente Elegante"
+                      description="Servicio impecable en un ambiente sofisticado de manteles blancos"
                     />
                   </Grid>
                 </Grid>
@@ -249,7 +263,7 @@ function Home() {
                 Our Locations
               </MKTypography>
               <MKTypography variant="body1" color="text" mb={3}>
-                Three unique locations, one unforgettable experience.
+                Tres locaciones, dos pa&iacute;ses, una tradici&oacute;n.
               </MKTypography>
             </Grid>
             <Grid container spacing={3}>
@@ -258,11 +272,11 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title="Guatemala City"
-                  description="6a Avenida 12-42, Zona 10, Guatemala City, Guatemala"
+                  title="Antigua Guatemala"
+                  description="4ta. Avenida Sur C.1 Antigua Guatemala, Sacatepéquez"
                   action={{
                     type: "internal",
-                    route: "/pages/restaurant/locations/guatemala",
+                    route: "/pages/restaurant/locations/antigua",
                     label: "View Details",
                   }}
                 />
@@ -272,11 +286,11 @@ function Home() {
                   variant="contained"
                   color="info"
                   icon="location_on"
-                  title="Los Angeles"
-                  description="742 S Broadway, Los Angeles, CA 90014, United States"
+                  title="Wilmette, IL"
+                  description="615 Green Bay Road, Wilmette, Illinois 60091"
                   action={{
                     type: "internal",
-                    route: "/pages/restaurant/locations/los-angeles",
+                    route: "/pages/restaurant/locations/wilmette",
                     label: "View Details",
                   }}
                 />
@@ -286,11 +300,11 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title="Miami"
-                  description="1000 Collins Ave, Miami Beach, FL 33139, United States"
+                  title="Arlington Heights, IL"
+                  description="27 West Campbell Ave, Arlington Heights, IL 60005"
                   action={{
                     type: "internal",
-                    route: "/pages/restaurant/locations/miami",
+                    route: "/pages/restaurant/locations/chicago",
                     label: "View Details",
                   }}
                 />
@@ -328,26 +342,26 @@ function Home() {
             <Grid container spacing={3} sx={{ mt: 4 }}>
               <Grid item xs={12} md={6} lg={4}>
                 <DefaultReviewCard
-                  name="Maria González"
+                  name="María G."
                   date="3 weeks ago"
-                  review="The pepian at Carlos & Carlos is the best I've had outside of Guatemala. The atmosphere and service are incredible. A true taste of home."
+                  review="El pepian en Carlos & Carlos Antigua es el mejor que he probado fuera de Chicago. La pasta artesanal y el servicio son increíbles."
                   rating={5}
                 />
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
                 <DefaultReviewCard
                   color="info"
-                  name="James Mitchell"
+                  name="James M."
                   date="1 month ago"
-                  review="Incredible Latin American cuisine. The chiles rellenos were perfect and the cocktail list is outstanding. Will definitely be coming back!"
+                  review="Incredible Northern Italian cuisine. The Black Pasta with lobster sauce is outstanding. A true Chicago institution."
                   rating={5}
                 />
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
                 <DefaultReviewCard
-                  name="Sofia Ramirez"
+                  name="Sofia R."
                   date="2 weeks ago"
-                  review="A hidden gem! From the moment you walk in, the warmth of the hospitality matches the excellence of the food. Highly recommend the ceviche."
+                  review="Una experiencia gastronómica única. El Veal Carlos y la carta de vinos son simplemente espectaculares. Recomendado 100%."
                   rating={5}
                 />
               </Grid>
@@ -359,57 +373,48 @@ function Home() {
 
         <MKBox component="section" pt={6} pb={8}>
           <Container>
-            <Grid container alignItems="center">
-              <Grid item xs={12} md={6} sx={{ mb: { xs: 6, md: 0 } }}>
-                <MKTypography variant="h4">Stay in the Loop</MKTypography>
-                <MKTypography variant="body2" color="text" mb={3}>
-                  Subscribe to our newsletter for exclusive events, new menu items, and special
-                  offers at all our locations.
-                </MKTypography>
-                <Grid container spacing={1}>
-                  <Grid item xs={8}>
-                    <MKBox
-                      component="form"
-                      onSubmit={(e) => e.preventDefault()}
-                      sx={{ display: "flex" }}
-                    >
-                      <MKBox
-                        component="input"
-                        placeholder="Your email address"
-                        sx={{
-                          width: "100%",
-                          py: 1.5,
-                          px: 2,
-                          border: ({ borders: { borderWidth, borderColor } }) =>
-                            `${borderWidth[1]} solid ${borderColor}`,
-                          borderRadius: ({ borders: { borderRadius } }) => borderRadius.md,
-                          fontSize: ({ typography: { size } }) => size.md,
-                          outline: "none",
-                          "&:focus": {
-                            borderColor: ({ palette: { info } }) => info.main,
-                          },
-                        }}
-                      />
-                    </MKBox>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <MKButton variant="gradient" color="info" sx={{ height: "100%", width: "100%" }}>
-                      Subscribe
-                    </MKButton>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} md={5} sx={{ ml: "auto", textAlign: "center" }}>
-                <Icon sx={{ fontSize: 80, color: ({ palette: { info } }) => info.main }}>
-                  restaurant_menu
-                </Icon>
-                <MKTypography variant="h5" fontWeight="bold" mt={2}>
-                  Join Our Family
-                </MKTypography>
-                <MKTypography variant="body2" color="text">
-                  Be the first to know about special events and new menu launches.
-                </MKTypography>
-              </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              lg={7}
+              justifyContent="center"
+              sx={{ mx: "auto", textAlign: "center" }}
+            >
+              <MKBadge
+                variant="contained"
+                color="info"
+                badgeContent="reservations"
+                container
+                sx={{ mb: 2 }}
+              />
+              <MKTypography variant="h3" mb={2}>
+                Reserve Your Table
+              </MKTypography>
+              <MKTypography variant="body2" color="text" mb={3}>
+                Nos sentiremos honrados de brindarle una experiencia gastron&oacute;mica &uacute;nica,
+                excelente atenci&oacute;n, en adici&oacute;n al ambiente, confort y locaci&oacute;n.
+              </MKTypography>
+              <Stack direction="row" spacing={2} justifyContent="center">
+                <MKButton
+                  component="a"
+                  href="tel:+50278722432"
+                  variant="gradient"
+                  color="info"
+                  size="large"
+                >
+                  Call +502 7872 2432
+                </MKButton>
+                <MKButton
+                  component="a"
+                  href="https://www.opentable.com/"
+                  variant="outlined"
+                  color="info"
+                  size="large"
+                >
+                  Reserve Online
+                </MKButton>
+              </Stack>
             </Grid>
           </Container>
         </MKBox>

@@ -31,17 +31,21 @@ function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
 
   return (
-    <MKBox component="footer">
+    <MKBox component="footer" bgColor="black">
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
-            <MKBox>
-              <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
-              </Link>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
-            </MKBox>
-            <MKBox display="flex" alignItems="center" mt={3}>
+        <Grid container spacing={3} alignItems="flex-start">
+          <Grid item xs={12} md={4} sx={{ mb: 3 }}>
+            <Link to={brand.route} style={{ textDecoration: "none" }}>
+              <MKBox
+                component="img"
+                src={brand.image}
+                alt={brand.name}
+                width="180px"
+                mb={2}
+                sx={{ objectFit: "contain" }}
+              />
+            </Link>
+            <MKBox display="flex" alignItems="center" mt={1}>
               {socials.map(({ icon, link }, key) => (
                 <MKTypography
                   key={link}
@@ -50,7 +54,7 @@ function DefaultFooter({ content }) {
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
-                  color="dark"
+                  color="white"
                   opacity={0.8}
                   mr={key === socials.length - 1 ? 0 : 2.5}
                 >
@@ -67,6 +71,7 @@ function DefaultFooter({ content }) {
                 fontWeight="bold"
                 textTransform="capitalize"
                 mb={1}
+                color="white"
               >
                 {title}
               </MKTypography>
@@ -82,6 +87,7 @@ function DefaultFooter({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
+                        color="white"
                       >
                         {name}
                       </MKTypography>
@@ -92,6 +98,7 @@ function DefaultFooter({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
+                        color="white"
                       >
                         {name}
                       </MKTypography>

@@ -12,14 +12,16 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import bgImage from "assets/images/restaurant/antigua/carlos-05-988x658.jpg";
 
 function ContactUs() {
   return (
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
+        brandLogo={brandLogo}
         routes={routes}
         action={{
           type: "external",
@@ -93,8 +95,8 @@ function ContactUs() {
                 Get In Touch
               </MKTypography>
               <MKTypography variant="body2" color="text" mb={4}>
-                For reservations, private events, catering, or general inquiries, we&apos;re here to
-                help. Fill out the form and our team will get back to you within 24 hours.
+                Nos sentiremos honrados que seleccione Carlos & Carlos en su pr&oacute;xima visita.
+                Estaremos gustosos de brindarle una experiencia gastron&oacute;mica &uacute;nica.
               </MKTypography>
 
               <MKBox display="flex" alignItems="center" p={1}>
@@ -116,10 +118,34 @@ function ContactUs() {
                 </MKBox>
                 <MKBox>
                   <MKTypography variant="button" fontWeight="bold" display="block">
-                    Phone
+                    Reservations
                   </MKTypography>
-                  <MKTypography variant="caption" color="text">
-                    +1 (213) 555-0100
+                  <MKTypography
+                    variant="caption"
+                    color="text"
+                    component="a"
+                    href="tel:+50278722432"
+                    display="block"
+                  >
+                    Antigua: +502 7872 2432
+                  </MKTypography>
+                  <MKTypography
+                    variant="caption"
+                    color="text"
+                    component="a"
+                    href="tel:8479205058"
+                    display="block"
+                  >
+                    Wilmette: 847-920-5058
+                  </MKTypography>
+                  <MKTypography
+                    variant="caption"
+                    color="text"
+                    component="a"
+                    href="tel:8472592600"
+                    display="block"
+                  >
+                    Chicago: 847-259-2600
                   </MKTypography>
                 </MKBox>
               </MKBox>
@@ -138,15 +164,21 @@ function ContactUs() {
                   mr={2}
                 >
                   <MKTypography variant="body1" color="white" lineHeight={0}>
-                    <i className="fas fa-envelope" />
+                    <i className="fab fa-whatsapp" />
                   </MKTypography>
                 </MKBox>
                 <MKBox>
                   <MKTypography variant="button" fontWeight="bold" display="block">
-                    Email
+                    WhatsApp
                   </MKTypography>
-                  <MKTypography variant="caption" color="text">
-                    info@carlosandcarlos.com
+                  <MKTypography
+                    variant="caption"
+                    color="text"
+                    component="a"
+                    href="https://wa.me/50239899709"
+                    target="_blank"
+                  >
+                    +502 3989 9709 (Antigua)
                   </MKTypography>
                 </MKBox>
               </MKBox>
@@ -170,10 +202,73 @@ function ContactUs() {
                 </MKBox>
                 <MKBox>
                   <MKTypography variant="button" fontWeight="bold" display="block">
-                    Headquarters
+                    Antigua Guatemala
                   </MKTypography>
                   <MKTypography variant="caption" color="text">
-                    742 S Broadway, Los Angeles, CA 90014
+                    4ta. Avenida Sur C.1, Antigua Guatemala, Sacatep&eacute;quez
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text" component="a" href="mailto:antigua@carlosandcarlos.com" display="block">
+                    antigua@carlosandcarlos.com
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+
+              <MKBox display="flex" alignItems="center" p={1} mt={1}>
+                <MKBox
+                  width="2.5rem"
+                  height="2.5rem"
+                  variant="gradient"
+                  bgColor="info"
+                  color="white"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius="lg"
+                  mr={2}
+                >
+                  <MKTypography variant="body1" color="white" lineHeight={0}>
+                    <i className="fas fa-map-marker-alt" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox>
+                  <MKTypography variant="button" fontWeight="bold" display="block">
+                    Wilmette, IL
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text">
+                    615 Green Bay Road, Wilmette, Illinois 60091
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text" component="a" href="mailto:wilmette@carlosandcarlos.com" display="block">
+                    wilmette@carlosandcarlos.com
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+
+              <MKBox display="flex" alignItems="center" p={1} mt={1}>
+                <MKBox
+                  width="2.5rem"
+                  height="2.5rem"
+                  variant="gradient"
+                  bgColor="info"
+                  color="white"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius="lg"
+                  mr={2}
+                >
+                  <MKTypography variant="body1" color="white" lineHeight={0}>
+                    <i className="fas fa-map-marker-alt" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox>
+                  <MKTypography variant="button" fontWeight="bold" display="block">
+                    Arlington Heights, IL
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text">
+                    27 West Campbell Ave, Arlington Heights, IL 60005
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text" component="a" href="mailto:chicago@carlosandcarlos.com" display="block">
+                    chicago@carlosandcarlos.com
                   </MKTypography>
                 </MKBox>
               </MKBox>

@@ -10,7 +10,7 @@ const date = new Date().getFullYear();
 export default {
   brand: {
     name: "Carlos & Carlos",
-    image: "",
+    image: "/images/logos/brand.png",
     route: "/",
   },
   socials: [
@@ -26,24 +26,20 @@ export default {
       icon: <InstagramIcon />,
       link: "https://www.instagram.com/",
     },
-    {
-      icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/",
-    },
   ],
   menus: [
     {
       name: "locations",
       items: [
-        { name: "Guatemala City", href: "/pages/restaurant/locations/guatemala" },
-        { name: "Los Angeles", href: "/pages/restaurant/locations/los-angeles" },
-        { name: "Miami", href: "/pages/restaurant/locations/miami" },
+        { name: "Antigua Guatemala", href: "/pages/restaurant/locations/antigua" },
+        { name: "Wilmette, IL", href: "/pages/restaurant/locations/wilmette" },
+        { name: "Arlington Heights, IL", href: "/pages/restaurant/locations/chicago" },
       ],
     },
     {
       name: "company",
       items: [
-        { name: "about us", href: "/pages/restaurant/about-us" },
+        { name: "our story", href: "/pages/restaurant/about-us" },
         { name: "menus", href: "/pages/restaurant/menus" },
         { name: "events", href: "/pages/restaurant/events" },
         { name: "contact", href: "/pages/restaurant/contact-us" },
@@ -51,7 +47,7 @@ export default {
     },
   ],
   copyright: (
-    <MKTypography variant="button" fontWeight="regular">
+    <MKTypography variant="button" fontWeight="regular" color="white">
       All rights reserved. Copyright &copy; {date} Carlos & Carlos.
     </MKTypography>
   ),

@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ brand, brandLogo, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -476,9 +476,19 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
-            </MKTypography>
+            {brandLogo ? (
+              <MKBox
+                component="img"
+                src={brandLogo}
+                alt={brand}
+                height="40px"
+                sx={{ objectFit: "contain", verticalAlign: "middle" }}
+              />
+            ) : (
+              <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
+                {brand}
+              </MKTypography>
+            )}
           </MKBox>
           <MKBox
             color="inherit"
@@ -563,6 +573,7 @@ DefaultNavbar.defaultProps = {
 // Typechecking props for the DefaultNavbar
 DefaultNavbar.propTypes = {
   brand: PropTypes.string,
+  brandLogo: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.shape).isRequired,
   transparent: PropTypes.bool,
   light: PropTypes.bool,

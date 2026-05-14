@@ -1,7 +1,6 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -15,8 +14,9 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/bg-about-us.jpg";
+import bgImage from "assets/images/restaurant/antigua/carlos-07-988x658.jpg";
 import team1 from "assets/images/team-5.jpg";
 import team2 from "assets/images/bruce-mars.jpg";
 import team3 from "assets/images/ivana-squares.jpg";
@@ -27,6 +27,7 @@ function AboutUs() {
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
+        brandLogo={brandLogo}
         routes={routes}
         action={{
           type: "external",
@@ -77,7 +78,7 @@ function AboutUs() {
               Our Story
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8}>
-              A journey of flavor, family, and tradition.
+              Since 1985 — A legacy of Italian excellence.
             </MKTypography>
           </Grid>
         </Container>
@@ -100,29 +101,33 @@ function AboutUs() {
                 <MKBadge
                   variant="contained"
                   color="info"
-                  badgeContent="since 2010"
+                  badgeContent="since 1985"
                   container
                   sx={{ mb: 2 }}
                 />
                 <MKTypography variant="h3" mb={2}>
-                  From Guatemala With Love
+                  Chicago 1985
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  Carlos & Carlos was born from a simple dream: to share the vibrant, soulful
-                  flavors of Latin American cuisine with the world. Founded by brothers Carlos and
-                  Carlos Mart&iacute;nez, our restaurant brings together family recipes passed down
-                  through generations with innovative culinary techniques.
+                  A principios de 1985, <strong>CARLOS MONTIEL</strong> y su hermano{" "}
+                  <strong>EDDY MONTIEL</strong>, abrieron un peque&ntilde;o restaurante que
+                  eventualmente cambiar&iacute;a de alguna manera la forma de comer en Chicago. Se
+                  aventuraron en un lugar que nadie se atrever&iacute;a a abrir, dejando solo un
+                  restaurante de manteles blancos del norte de Italia.
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  What started as a small eatery in Guatemala City has grown into a beloved
-                  restaurant group with locations across the United States. Every dish on our menu
-                  tells a story of our heritage, from the highlands of Guatemala to the coastal
-                  flavors of Central America.
+                  Haciendo pasta fresca frente a los comensales y con servicio de meseros de
+                  etiqueta, Carlos & Carlos comenz&oacute; una maravillosa trayectoria gastron&oacute;mica.
+                  Platos emblem&aacute;ticos como el Black Pasta con camarones y vieiras en salsa de
+                  crema de champagne, el Veal Carlos con hongos porcini y salsa de crema, y el
+                  salm&oacute;n fresco escalfado con salsa de langosta, le dieron a Carlos & Carlos
+                  un lugar entre los restaurantes de &eacute;lite de Chicago.
                 </MKTypography>
                 <MKTypography variant="body2" color="text">
-                  We believe that great food brings people together. Whether you&apos;re dining in
-                  Guatemala, Los Angeles, or Miami, we invite you to experience the warmth of our
-                  hospitality and the richness of our culinary traditions.
+                  Este peque&ntilde;o y acogedor restaurante se convirti&oacute; en un im&aacute;n
+                  para la alta sociedad de Chicago, atrayendo a personalidades como Tom Cruise,
+                  Robert De Niro, Paul Newman, Julia Roberts y el dise&ntilde;ador Oscar de la
+                  Renta, entre muchos otros.
                 </MKTypography>
               </Grid>
               <Grid item xs={12} lg={5} sx={{ ml: "auto" }}>
@@ -131,8 +136,8 @@ function AboutUs() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="emoji_flags"
-                        title="Our Heritage"
-                        description="Proudly rooted in Guatemalan and Latin American culinary traditions"
+                        title="Est. 1985"
+                        description="Fundado en Chicago por los hermanos Montiel con una visión audaz"
                       />
                     </MKBox>
                   </Grid>
@@ -140,25 +145,25 @@ function AboutUs() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="restaurant_menu"
-                        title="Farm to Table"
-                        description="Committed to fresh, locally sourced ingredients and sustainable practices"
+                        title="Cocina Franco-Italiana"
+                        description="Fusión única de la cocina del norte de Italia y Francia"
                       />
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <MKBox mb={{ xs: 3, md: 0 }}>
                       <DefaultInfoCard
-                        icon="diversity_3"
-                        title="Family Owned"
-                        description="A family-run business built on passion, quality, and genuine hospitality"
+                        icon="star"
+                        title="Reconocimiento Internacional"
+                        description="Aclamado por críticos y celebridades de todo el mundo"
                       />
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <DefaultInfoCard
                       icon="public"
-                      title="Global Reach"
-                      description="3 locations serving authentic Latin American flavors across 2 countries"
+                      title="3 Locaciones"
+                      description="Antigua Guatemala, Wilmette y Arlington Heights"
                     />
                   </Grid>
                 </Grid>
@@ -174,14 +179,109 @@ function AboutUs() {
                 <MKBadge
                   variant="contained"
                   color="info"
-                  badgeContent="our team"
+                  badgeContent="milestones"
                   container
                   sx={{ mb: 2 }}
                 />
                 <MKTypography variant="h3" color="white">
+                  Nuestra Historia
+                </MKTypography>
+              </Grid>
+            </Grid>
+
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={4}>
+                <MKBox
+                  bgColor="rgba(255,255,255,0.05)"
+                  borderRadius="xl"
+                  p={3}
+                  sx={{ backdropFilter: "blur(10px)" }}
+                >
+                  <MKBadge
+                    variant="contained"
+                    color="info"
+                    badgeContent="1985"
+                    container
+                    sx={{ mb: 2 }}
+                  />
+                  <MKTypography variant="h5" color="white" mb={1}>
+                    Chicago
+                  </MKTypography>
+                  <MKTypography variant="body2" color="white" opacity={0.8}>
+                    Los hermanos Montiel abren las puertas del primer Carlos & Carlos en Chicago,
+                    en el coraz&oacute;n de Arlington Heights. Con una fusi&oacute;n &uacute;nica de
+                    cocina del norte de Italia y francesa, pronto recibir&iacute;a a grandes
+                    &iacute;conos como Tom Cruise, Robert De Niro, Paul Newman y Julia Roberts.
+                  </MKTypography>
+                </MKBox>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <MKBox
+                  bgColor="rgba(255,255,255,0.05)"
+                  borderRadius="xl"
+                  p={3}
+                  sx={{ backdropFilter: "blur(10px)" }}
+                >
+                  <MKBadge
+                    variant="contained"
+                    color="info"
+                    badgeContent="2009"
+                    container
+                    sx={{ mb: 2 }}
+                  />
+                  <MKTypography variant="h5" color="white" mb={1}>
+                    Guatemala
+                  </MKTypography>
+                  <MKTypography variant="body2" color="white" opacity={0.8}>
+                    Tras haber conseguido el &eacute;xito internacional, Carlos & Carlos se expande
+                    y abre sus puertas en el Aeropuerto Internacional La Aurora en la Ciudad de
+                    Guatemala, ofreciendo platillos de alta calidad elaborados con pasta artesanal.
+                  </MKTypography>
+                </MKBox>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <MKBox
+                  bgColor="rgba(255,255,255,0.05)"
+                  borderRadius="xl"
+                  p={3}
+                  sx={{ backdropFilter: "blur(10px)" }}
+                >
+                  <MKBadge
+                    variant="contained"
+                    color="info"
+                    badgeContent="2023"
+                    container
+                    sx={{ mb: 2 }}
+                  />
+                  <MKTypography variant="h5" color="white" mb={1}>
+                    Antigua Guatemala
+                  </MKTypography>
+                  <MKTypography variant="body2" color="white" opacity={0.8}>
+                    Carlos & Carlos hace su debut en Antigua Guatemala el 12 de enero de 2023,
+                    ofreciendo una variedad de platillos de alta calidad, una extensa selecci&oacute;n
+                    de vinos y ampliando un legado de reconocimiento internacional.
+                  </MKTypography>
+                </MKBox>
+              </Grid>
+            </Grid>
+          </Container>
+        </MKBox>
+
+        <MKBox component="section" py={6}>
+          <Container>
+            <Grid container>
+              <Grid item xs={12} md={8} sx={{ mb: 6 }}>
+                <MKBadge
+                  variant="contained"
+                  color="info"
+                  badgeContent="our team"
+                  container
+                  sx={{ mb: 2 }}
+                />
+                <MKTypography variant="h3" fontWeight="bold">
                   Meet The Team
                 </MKTypography>
-                <MKTypography variant="body2" color="white" opacity={0.8}>
+                <MKTypography variant="body2" color="text">
                   The passionate people behind every unforgettable meal.
                 </MKTypography>
               </Grid>
@@ -191,9 +291,9 @@ function AboutUs() {
                 <MKBox mb={1}>
                   <HorizontalTeamCard
                     image={team1}
-                    name="Carlos Martínez"
+                    name="Carlos Montiel"
                     position={{ color: "info", label: "Co-Founder & Executive Chef" }}
-                    description="A culinary artist who brings the authentic taste of Guatemala to every dish. Trained in Guatemala City and Paris."
+                    description="Fundador de Carlos & Carlos en 1985. Su visión y pasión por la cocina franco-italiana crearon un legado culinario que hoy cruza fronteras."
                   />
                 </MKBox>
               </Grid>
@@ -201,9 +301,9 @@ function AboutUs() {
                 <MKBox mb={1}>
                   <HorizontalTeamCard
                     image={team2}
-                    name="Carlos Rodríguez"
-                    position={{ color: "info", label: "Co-Founder & Operations Director" }}
-                    description="The business mind behind Carlos & Carlos, ensuring every location delivers excellence."
+                    name="Eddy Montiel"
+                    position={{ color: "info", label: "Co-Founder" }}
+                    description="Cofundador del primer Carlos & Carlos en Chicago. Su dedicación a la excelencia culinaria sentó las bases del éxito del restaurante."
                   />
                 </MKBox>
               </Grid>
@@ -211,9 +311,9 @@ function AboutUs() {
                 <MKBox mb={{ xs: 1, lg: 0 }}>
                   <HorizontalTeamCard
                     image={team3}
-                    name="María García"
-                    position={{ color: "info", label: "Head Pastry Chef" }}
-                    description="Creator of our beloved desserts, from classic flan to innovative Latin American pastries."
+                    name="Chef Ejecutivo"
+                    position={{ color: "info", label: "Head Chef - Antigua" }}
+                    description="Lidera la cocina en Antigua Guatemala, manteniendo la tradición de pasta artesanal y sabores auténticos."
                   />
                 </MKBox>
               </Grid>
@@ -221,9 +321,9 @@ function AboutUs() {
                 <MKBox mb={{ xs: 1, lg: 0 }}>
                   <HorizontalTeamCard
                     image={team4}
-                    name="David Hernández"
-                    position={{ color: "info", label: "Beverage Director" }}
-                    description="Crafts our signature cocktail program, featuring premium Latin American spirits."
+                    name="Sommelier"
+                    position={{ color: "info", label: "Wine Director" }}
+                    description="Curador de nuestra extensa selección de vinos, maridando perfectamente cada plato con los mejores vinos italianos y del mundo."
                   />
                 </MKBox>
               </Grid>
@@ -252,14 +352,14 @@ function AboutUs() {
                 Ready to Experience Carlos & Carlos?
               </MKTypography>
               <MKTypography variant="body2" color="text" mb={3}>
-                Whether you&apos;re joining us in Guatemala City, Los Angeles, or Miami, we
-                can&apos;t wait to welcome you.
+                Whether you&apos;re joining us in Antigua Guatemala, Wilmette, or Arlington
+                Heights, we can&apos;t wait to welcome you.
               </MKTypography>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <MKButton
                     component="a"
-                    href="/pages/restaurant/locations"
+                    href="/pages/restaurant/locations/antigua"
                     variant="gradient"
                     color="info"
                   >

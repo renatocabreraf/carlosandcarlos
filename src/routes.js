@@ -15,6 +15,12 @@ const routes = [
     component: <Home />,
   },
   {
+    name: "our story",
+    icon: <Icon>info</Icon>,
+    route: "/pages/restaurant/about-us",
+    component: <AboutUs />,
+  },
+  {
     name: "menus",
     icon: <Icon>restaurant_menu</Icon>,
     route: "/pages/restaurant/menus",
@@ -28,8 +34,8 @@ const routes = [
         name: "guatemala",
         collapse: [
           {
-            name: "Guatemala City",
-            route: "/pages/restaurant/locations/guatemala",
+            name: "Antigua Guatemala",
+            route: "/pages/restaurant/locations/antigua",
             component: <Locations />,
           },
         ],
@@ -38,24 +44,18 @@ const routes = [
         name: "united states",
         collapse: [
           {
-            name: "Los Angeles",
-            route: "/pages/restaurant/locations/los-angeles",
+            name: "Wilmette, IL",
+            route: "/pages/restaurant/locations/wilmette",
             component: <Locations />,
           },
           {
-            name: "Miami",
-            route: "/pages/restaurant/locations/miami",
+            name: "Arlington Heights, IL",
+            route: "/pages/restaurant/locations/chicago",
             component: <Locations />,
           },
         ],
       },
     ],
-  },
-  {
-    name: "about us",
-    icon: <Icon>info</Icon>,
-    route: "/pages/restaurant/about-us",
-    component: <AboutUs />,
   },
   {
     name: "events",
@@ -72,7 +72,7 @@ const routes = [
   {
     name: "reservations",
     icon: <Icon>book_online</Icon>,
-    href: "https://www.opentable.com/",
+    href: "tel:+50278722432",
   },
 ];
 

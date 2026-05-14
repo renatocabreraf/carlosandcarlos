@@ -13,60 +13,61 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import brandLogo from "assets/images/logos/brand.png";
 
-import bgImage from "assets/images/bg3.jpg";
+import bgImage from "assets/images/restaurant/antigua/carlos-13-1.jpg";
 
 const upcomingEvents = [
   {
-    title: "Noche de Ceviche",
-    date: "May 25, 2026",
-    time: "6:00 PM - 9:00 PM",
-    location: "Los Angeles",
-    description:
-      "Join us for a special evening celebrating the freshest ceviches from across Latin America. Our chefs will present five distinct ceviche preparations, each paired with a signature cocktail.",
-    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/blogs.jpg",
-  },
-  {
-    title: "Guatemalan Wine Dinner",
-    date: "June 10, 2026",
+    title: "Noche de Vinos Italianos",
+    date: "June 12, 2026",
     time: "7:00 PM - 10:00 PM",
-    location: "Miami",
+    location: "Antigua Guatemala",
     description:
-      "An exclusive multi-course dinner featuring the best of Guatemalan cuisine paired with selected wines from Latin America. A culinary journey through the highlands and coast.",
+      "Una cena exclusiva de varios tiempos maridada con selecciones de las mejores bodegas italianas. Nuestro sommelier guiará un recorrido por las regiones vinícolas de Italia, desde el Piamonte hasta la Toscana.",
     image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/testimonials.jpg",
   },
   {
-    title: "Tequila & Mezcal Tasting",
-    date: "June 20, 2026",
-    time: "5:00 PM - 8:00 PM",
-    location: "Guatemala City",
+    title: "Summer Pasta Making Class",
+    date: "June 28, 2026",
+    time: "11:00 AM - 2:00 PM",
+    location: "Wilmette, IL",
     description:
-      "Explore the world of agave spirits with our Beverage Director. Sample premium tequilas and mezcals paired with traditional Mexican cuisine.",
+      "Aprenda los secretos de la pasta artesanal con nuestro chef ejecutivo. Una clase interactiva donde preparará tagliatelle, ravioli y gnocchi desde cero, seguida de un almuerzo con sus creaciones.",
+    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/blogs.jpg",
+  },
+  {
+    title: "40th Anniversary Gala Dinner",
+    date: "September 20, 2026",
+    time: "6:00 PM - 11:00 PM",
+    location: "Arlington Heights, IL",
+    description:
+      "Celebramos 40 años de excelencia culinaria con una cena de gala que recorrerá los platos más emblemáticos de nuestra historia: Black Pasta, Veal Carlos, y una selección de los mejores vinos de nuestra carta.",
     image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/features.jpg",
   },
 ];
 
 const pastEvents = [
   {
-    title: "Latin American Street Food Festival",
-    date: "March 15, 2026",
+    title: "Valentine's Day Special",
+    date: "February 14, 2026",
     location: "All Locations",
     description:
-      "A celebration of Latin American street food featuring pupusas, arepas, tacos, and more from every corner of Latin America.",
+      "Una velada romántica con menú especial de varios tiempos, champagne de bienvenida y un postre sorpresa para cada pareja.",
   },
   {
-    title: "Women in Wine Night",
-    date: "March 8, 2026",
-    location: "Los Angeles",
+    title: "Truffle & Wine Pairing",
+    date: "January 25, 2026",
+    location: "Wilmette, IL",
     description:
-      "Celebrating International Women's Day with a special wine dinner featuring female winemakers from Argentina and Chile.",
+      "Una cena exclusiva con trufa negra fresca en cada plato, maridada con vinos seleccionados de la región de Umbria.",
   },
   {
-    title: "New Year's Eve Gala",
-    date: "December 31, 2025",
-    location: "All Locations",
+    title: "Nochebuena Dinner",
+    date: "December 24, 2025",
+    location: "Antigua Guatemala",
     description:
-      "A spectacular New Year's Eve celebration featuring a special multi-course menu, live music, and champagne toast at midnight.",
+      "Una cena especial de Nochebuena con un menú tradicional italiano y guatemalteco, acompañado de vinos espumosos y música en vivo.",
   },
 ];
 
@@ -75,6 +76,7 @@ function Events() {
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
+        brandLogo={brandLogo}
         routes={routes}
         action={{
           type: "external",

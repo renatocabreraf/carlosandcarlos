@@ -21,12 +21,12 @@ Coded by www.creative-tim.com
 
 export default {
   background: {
-    default: "#f0f2f5",
+    default: "#111111",
   },
 
   text: {
-    main: "#7b809a",
-    focus: "#7b809a",
+    main: "#4A4A4A",
+    focus: "#4A4A4A",
   },
 
   transparent: {
@@ -34,29 +34,29 @@ export default {
   },
 
   white: {
-    main: "#ffffff",
-    focus: "#ffffff",
+    main: "#EFE7DA",
+    focus: "#F5F1E8",
   },
 
   black: {
-    light: "#000000",
+    light: "#111111",
     main: "#000000",
     focus: "#000000",
   },
 
   primary: {
-    main: "#e91e63",
-    focus: "#e91e63",
+    main: "#C8A96B",
+    focus: "#A88442",
   },
 
   secondary: {
-    main: "#7b809a",
-    focus: "#8f93a9",
+    main: "#3A3A3A",
+    focus: "#4A4A4A",
   },
 
   info: {
-    main: "#1A73E8",
-    focus: "#1662C4",
+    main: "#C8A96B",
+    focus: "#A88442",
   },
 
   success: {
@@ -70,46 +70,46 @@ export default {
   },
 
   error: {
-    main: "#F44335",
-    focus: "#f65f53",
+    main: "#6B1F1F",
+    focus: "#8B2F2F",
   },
 
   light: {
-    main: "#f0f2f5",
-    focus: "#f0f2f5",
+    main: "#EFE7DA",
+    focus: "#EFE7DA",
   },
 
   dark: {
-    main: "#344767",
-    focus: "#2c3c58",
+    main: "#1C1C1C",
+    focus: "#111111",
   },
 
   grey: {
-    100: "#f8f9fa",
-    200: "#f0f2f5",
-    300: "#dee2e6",
-    400: "#ced4da",
-    500: "#adb5bd",
-    600: "#6c757d",
-    700: "#495057",
-    800: "#343a40",
-    900: "#212529",
+    100: "#1C1C1C",
+    200: "#2A2A2A",
+    300: "#3A3A3A",
+    400: "#4A4A4A",
+    500: "#6B6B6B",
+    600: "#8A8A8A",
+    700: "#AAAAAA",
+    800: "#CCCCCC",
+    900: "#EFE7DA",
   },
 
   gradients: {
     primary: {
-      main: "#EC407A",
-      state: "#D81B60",
+      main: "#C8A96B",
+      state: "#A88442",
     },
 
     secondary: {
-      main: "#747b8a",
-      state: "#495361",
+      main: "#3A3A3A",
+      state: "#1C1C1C",
     },
 
     info: {
-      main: "#49a3f1",
-      state: "#1A73E8",
+      main: "#C8A96B",
+      state: "#A88442",
     },
 
     success: {
@@ -123,18 +123,18 @@ export default {
     },
 
     error: {
-      main: "#EF5350",
-      state: "#E53935",
+      main: "#6B1F1F",
+      state: "#8B2F2F",
     },
 
     light: {
-      main: "#EBEFF4",
-      state: "#CED4DA",
+      main: "#EFE7DA",
+      state: "#D6C7B2",
     },
 
     dark: {
-      main: "#42424a",
-      state: "#191919",
+      main: "#111111",
+      state: "#1C1C1C",
     },
   },
 
@@ -202,18 +202,18 @@ export default {
 
   badgeColors: {
     primary: {
-      background: "#f8b3ca",
-      text: "#cc084b",
+      background: "#3A3A3A",
+      text: "#C8A96B",
     },
 
     secondary: {
-      background: "#d7d9e1",
-      text: "#6c757d",
+      background: "#3A3A3A",
+      text: "#D6C7B2",
     },
 
     info: {
-      background: "#aecef7",
-      text: "#095bc6",
+      background: "#3A3A3A",
+      text: "#C8A96B",
     },
 
     success: {
@@ -227,35 +227,35 @@ export default {
     },
 
     error: {
-      background: "#fcd3d0",
-      text: "#f61200",
+      background: "#3A3A3A",
+      text: "#6B1F1F",
     },
 
     light: {
-      background: "#ffffff",
-      text: "#c7d3de",
+      background: "#EFE7DA",
+      text: "#1C1C1C",
     },
 
     dark: {
-      background: "#8097bf",
-      text: "#1e2e4a",
+      background: "#111111",
+      text: "#F5F1E8",
     },
   },
 
   coloredShadows: {
-    primary: "#e91e62",
-    secondary: "#110e0e",
-    info: "#00bbd4",
+    primary: "#C8A96B",
+    secondary: "#3A3A3A",
+    info: "#C8A96B",
     success: "#4caf4f",
     warning: "#ff9900",
-    error: "#f44336",
-    light: "#adb5bd",
-    dark: "#404040",
+    error: "#6B1F1F",
+    light: "#EFE7DA",
+    dark: "#111111",
   },
 
-  inputBorderColor: "#d2d6da",
+  inputBorderColor: "#3A3A3A",
 
   tabs: {
-    indicator: { boxShadow: "#ddd" },
+    indicator: { boxShadow: "#C8A96B" },
   },
 };
