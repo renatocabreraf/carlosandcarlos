@@ -4,37 +4,31 @@ import Card from "@mui/material/Card";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 import MKBadge from "components/MKBadge";
 
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
-import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
 import brandLogo from "assets/images/logos/brand.png";
+import antiguaLogo from "assets/images/logos/antigua.png";
+import chicagoLogo from "assets/images/logos/chicago.png";
+import wilmetteLogo from "assets/images/logos/wilmette.png";
 
 import bgImage from "assets/images/restaurant/antigua/carlos-07-988x658.jpg";
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
+
+import { useLanguage } from "i18n/context";
 
 function AboutUs() {
+  const { t } = useLanguage();
   return (
     <>
       <DefaultNavbar
         brand="Carlos & Carlos"
         brandLogo={brandLogo}
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.opentable.com/",
-          label: "reservations",
-          color: "info",
-        }}
       />
       <MKBox
         minHeight="40vh"
@@ -73,10 +67,10 @@ function AboutUs() {
                 [breakpoints.down("md")]: { fontSize: size["3xl"] },
               })}
             >
-              Our Story
+              {t('about.hero.title')}
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8}>
-              Since 1985 — A legacy of Italian excellence.
+              {t('about.hero.subtitle')}
             </MKTypography>
           </Grid>
         </Container>
@@ -104,28 +98,16 @@ function AboutUs() {
                   sx={{ mb: 2 }}
                 />
                 <MKTypography variant="h3" mb={2}>
-                  Chicago 1985
+                  {t('about.title')}
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  A principios de 1985, <strong>CARLOS MONTIEL</strong> y su hermano{" "}
-                  <strong>EDDY MONTIEL</strong>, abrieron un peque&ntilde;o restaurante que
-                  eventualmente cambiar&iacute;a de alguna manera la forma de comer en Chicago. Se
-                  aventuraron en un lugar que nadie se atrever&iacute;a a abrir, dejando solo un
-                  restaurante de manteles blancos del norte de Italia.
+                  {t('about.p1')}
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  Haciendo pasta fresca frente a los comensales y con servicio de meseros de
-                  etiqueta, Carlos & Carlos comenz&oacute; una maravillosa trayectoria gastron&oacute;mica.
-                  Platos emblem&aacute;ticos como el Black Pasta con camarones y vieiras en salsa de
-                  crema de champagne, el Veal Carlos con hongos porcini y salsa de crema, y el
-                  salm&oacute;n fresco escalfado con salsa de langosta, le dieron a Carlos & Carlos
-                  un lugar entre los restaurantes de &eacute;lite de Chicago.
+                  {t('about.p2')}
                 </MKTypography>
                 <MKTypography variant="body2" color="text">
-                  Este peque&ntilde;o y acogedor restaurante se convirti&oacute; en un im&aacute;n
-                  para la alta sociedad de Chicago, atrayendo a personalidades como Tom Cruise,
-                  Robert De Niro, Paul Newman, Julia Roberts y el dise&ntilde;ador Oscar de la
-                  Renta, entre muchos otros.
+                  {t('about.p3')}
                 </MKTypography>
               </Grid>
               <Grid item xs={12} lg={5} sx={{ ml: "auto" }}>
@@ -134,8 +116,8 @@ function AboutUs() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="emoji_flags"
-                        title="Est. 1985"
-                        description="Fundado en Chicago por los hermanos Montiel con una visión audaz"
+                        title={t('about.cards.established')}
+                        description={t('about.cards.establishedDesc')}
                       />
                     </MKBox>
                   </Grid>
@@ -143,8 +125,8 @@ function AboutUs() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="restaurant_menu"
-                        title="Cocina Franco-Italiana"
-                        description="Fusión única de la cocina del norte de Italia y Francia"
+                        title={t('about.cards.cuisine')}
+                        description={t('about.cards.cuisineDesc')}
                       />
                     </MKBox>
                   </Grid>
@@ -152,17 +134,17 @@ function AboutUs() {
                     <MKBox mb={{ xs: 3, md: 0 }}>
                       <DefaultInfoCard
                         icon="star"
-                        title="Reconocimiento Internacional"
-                        description="Aclamado por críticos y celebridades de todo el mundo"
+                        title={t('about.cards.recognition')}
+                        description={t('about.cards.recognitionDesc')}
                       />
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <DefaultInfoCard
-                      icon="public"
-                      title="3 Locaciones"
-                      description="Antigua Guatemala, Wilmette y Arlington Heights"
-                    />
+                      <DefaultInfoCard
+                        icon="public"
+                        title={t('about.cards.locations')}
+                        description={t('about.cards.locationsDesc')}
+                      />
                   </Grid>
                 </Grid>
               </Grid>
@@ -182,198 +164,92 @@ function AboutUs() {
                   sx={{ mb: 2 }}
                 />
                 <MKTypography variant="h3" color="white">
-                  Nuestra Historia
+                  {t('about.milestones.title')}
                 </MKTypography>
               </Grid>
             </Grid>
 
-            <Grid container spacing={4}>
-              <Grid item xs={12} md={4}>
+            <Grid container spacing={4} alignItems="stretch">
+              <Grid item xs={12} md={4} display="flex">
                 <MKBox
                   bgColor="rgba(255,255,255,0.05)"
                   borderRadius="xl"
                   p={3}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  textAlign="center"
+                  width="100%"
                   sx={{ backdropFilter: "blur(10px)" }}
                 >
-                  <MKBadge
-                    variant="contained"
-                    color="info"
-                    badgeContent="1985"
-                    container
-                    sx={{ mb: 2 }}
+                  <MKBox
+                    component="img"
+                    src={chicagoLogo}
+                    alt="Arlington Heights"
+                    width="100%"
+                    sx={{ maxWidth: 100, height: 70, objectFit: "contain", mb: 2 }}
                   />
                   <MKTypography variant="h5" color="white" mb={1}>
-                    Chicago
+                    {t('about.milestones.chicago')}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Los hermanos Montiel abren las puertas del primer Carlos & Carlos en Chicago,
-                    en el coraz&oacute;n de Arlington Heights. Con una fusi&oacute;n &uacute;nica de
-                    cocina del norte de Italia y francesa, pronto recibir&iacute;a a grandes
-                    &iacute;conos como Tom Cruise, Robert De Niro, Paul Newman y Julia Roberts.
+                    {t('about.milestones.chicagoDesc')}
                   </MKTypography>
                 </MKBox>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={4} display="flex">
                 <MKBox
                   bgColor="rgba(255,255,255,0.05)"
                   borderRadius="xl"
                   p={3}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  textAlign="center"
+                  width="100%"
                   sx={{ backdropFilter: "blur(10px)" }}
                 >
-                  <MKBadge
-                    variant="contained"
-                    color="info"
-                    badgeContent="2009"
-                    container
-                    sx={{ mb: 2 }}
+                  <MKBox
+                    component="img"
+                    src={wilmetteLogo}
+                    alt="Wilmette"
+                    width="100%"
+                    sx={{ maxWidth: 100, height: 70, objectFit: "contain", mb: 2 }}
                   />
                   <MKTypography variant="h5" color="white" mb={1}>
-                    Guatemala
+                    {t('about.milestones.guatemala')}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Tras haber conseguido el &eacute;xito internacional, Carlos & Carlos se expande
-                    y abre sus puertas en el Aeropuerto Internacional La Aurora en la Ciudad de
-                    Guatemala, ofreciendo platillos de alta calidad elaborados con pasta artesanal.
+                    {t('about.milestones.guatemalaDesc')}
                   </MKTypography>
                 </MKBox>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={4} display="flex">
                 <MKBox
                   bgColor="rgba(255,255,255,0.05)"
                   borderRadius="xl"
                   p={3}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  textAlign="center"
+                  width="100%"
                   sx={{ backdropFilter: "blur(10px)" }}
                 >
-                  <MKBadge
-                    variant="contained"
-                    color="info"
-                    badgeContent="2023"
-                    container
-                    sx={{ mb: 2 }}
+                  <MKBox
+                    component="img"
+                    src={antiguaLogo}
+                    alt="Antigua Guatemala"
+                    width="100%"
+                    sx={{ maxWidth: 100, height: 70, objectFit: "contain", mb: 2 }}
                   />
                   <MKTypography variant="h5" color="white" mb={1}>
-                    Antigua Guatemala
+                    {t('about.milestones.antigua')}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Carlos & Carlos hace su debut en Antigua Guatemala el 12 de enero de 2023,
-                    ofreciendo una variedad de platillos de alta calidad, una extensa selecci&oacute;n
-                    de vinos y ampliando un legado de reconocimiento internacional.
+                    {t('about.milestones.antiguaDesc')}
                   </MKTypography>
                 </MKBox>
-              </Grid>
-            </Grid>
-          </Container>
-        </MKBox>
-
-        <MKBox component="section" py={6}>
-          <Container>
-            <Grid container>
-              <Grid item xs={12} md={8} sx={{ mb: 6 }}>
-                <MKBadge
-                  variant="contained"
-                  color="info"
-                  badgeContent="our team"
-                  container
-                  sx={{ mb: 2 }}
-                />
-                <MKTypography variant="h3" fontWeight="bold">
-                  Meet The Team
-                </MKTypography>
-                <MKTypography variant="body2" color="text">
-                  The passionate people behind every unforgettable meal.
-                </MKTypography>
-              </Grid>
-            </Grid>
-            <Grid container spacing={3}>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={1}>
-                  <HorizontalTeamCard
-                    image={team1}
-                    name="Carlos Montiel"
-                    position={{ color: "info", label: "Co-Founder & Executive Chef" }}
-                    description="Fundador de Carlos & Carlos en 1985. Su visión y pasión por la cocina franco-italiana crearon un legado culinario que hoy cruza fronteras."
-                  />
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={1}>
-                  <HorizontalTeamCard
-                    image={team2}
-                    name="Eddy Montiel"
-                    position={{ color: "info", label: "Co-Founder" }}
-                    description="Cofundador del primer Carlos & Carlos en Chicago. Su dedicación a la excelencia culinaria sentó las bases del éxito del restaurante."
-                  />
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={{ xs: 1, lg: 0 }}>
-                  <HorizontalTeamCard
-                    image={team3}
-                    name="Chef Ejecutivo"
-                    position={{ color: "info", label: "Head Chef - Antigua" }}
-                    description="Lidera la cocina en Antigua Guatemala, manteniendo la tradición de pasta artesanal y sabores auténticos."
-                  />
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={{ xs: 1, lg: 0 }}>
-                  <HorizontalTeamCard
-                    image={team4}
-                    name="Sommelier"
-                    position={{ color: "info", label: "Wine Director" }}
-                    description="Curador de nuestra extensa selección de vinos, maridando perfectamente cada plato con los mejores vinos italianos y del mundo."
-                  />
-                </MKBox>
-              </Grid>
-            </Grid>
-          </Container>
-        </MKBox>
-
-        <MKBox component="section" py={6}>
-          <Container>
-            <Grid
-              container
-              item
-              xs={12}
-              lg={7}
-              justifyContent="center"
-              sx={{ mx: "auto", textAlign: "center" }}
-            >
-              <MKBadge
-                variant="contained"
-                color="info"
-                badgeContent="join us"
-                container
-                sx={{ mb: 2 }}
-              />
-              <MKTypography variant="h3" mb={2}>
-                Ready to Experience Carlos & Carlos?
-              </MKTypography>
-              <MKTypography variant="body2" color="text" mb={3}>
-                Whether you&apos;re joining us in Antigua Guatemala, Wilmette, or Arlington
-                Heights, we can&apos;t wait to welcome you.
-              </MKTypography>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <MKButton
-                    component="a"
-                    href="/pages/restaurant/locations/antigua"
-                    variant="gradient"
-                    color="info"
-                  >
-                    Find a Location
-                  </MKButton>
-                </Grid>
-                <Grid item>
-                  <MKButton
-                    component="a"
-                    href="https://www.opentable.com/"
-                    variant="outlined"
-                    color="info"
-                  >
-                    Make a Reservation
-                  </MKButton>
-                </Grid>
               </Grid>
             </Grid>
           </Container>

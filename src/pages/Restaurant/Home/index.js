@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "i18n/context";
 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -16,20 +17,22 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 import DefaultCounterCard from "examples/Cards/CounterCards/DefaultCounterCard";
-import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
+
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 import routes from "routes";
 import footerRoutes from "footer.routes";
 import brandLogo from "assets/images/logos/brand.png";
 
-import hero1 from "assets/images/restaurant/antigua/slider5.jpg";
+import hero1 from "assets/images/restaurant/antigua/carlos-04-988x658.jpg";
 import hero2 from "assets/images/restaurant/chicago/slider1.jpg";
 import hero3 from "assets/images/restaurant/wilmette/wilmette-open-03.jpg";
+import hero4 from "assets/images/restaurant/antigua/carlos-13-1.jpg";
 
-const heroSlides = [hero1, hero2, hero3];
+const heroSlides = [hero1, hero2, hero3, hero4];
 
 function Home() {
+  const { t } = useLanguage();
   const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -45,12 +48,6 @@ function Home() {
         brand="Carlos & Carlos"
         brandLogo={brandLogo}
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.opentable.com/",
-          label: "reservations",
-          color: "info",
-        }}
       />
       <MKBox
         minHeight="100vh"
@@ -110,11 +107,10 @@ function Home() {
               sx={{ objectFit: "contain" }}
             />
             <MKTypography variant="h4" color="white" fontWeight="light" opacity={0.9} mb={3}>
-              Authentic Northern Italian & French Cuisine
+              {t('home.hero.subtitle')}
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mb={4} px={4}>
-              Desde Chicago hasta Guatemala, tres generaciones de excelencia culinaria. Pasta fresca
-              artesanal, los mejores vinos y una experiencia gastron&oacute;mica &uacute;nica.
+              {t('home.hero.description')}
             </MKTypography>
             <Stack direction="row" spacing={2}>
               <MKButton
@@ -124,17 +120,9 @@ function Home() {
                 color="info"
                 size="large"
               >
-                View Our Menus
+                {t('home.hero.viewMenus')}
               </MKButton>
-              <MKButton
-                component="a"
-                href="tel:+50278722432"
-                variant="outlined"
-                color="white"
-                size="large"
-              >
-                Reserve Now
-              </MKButton>
+
             </Stack>
           </Grid>
         </Container>
@@ -184,8 +172,8 @@ function Home() {
                 <DefaultCounterCard
                   count={40}
                   suffix="+"
-                  title="Years of Tradition"
-                  description="Serving excellence since 1985 in Chicago"
+                  title={t('home.counters.years')}
+                  description={t('home.counters.yearsDesc')}
                 />
               </Grid>
               <Grid item xs={12} md={4} display="flex">
@@ -195,8 +183,8 @@ function Home() {
                 />
                 <DefaultCounterCard
                   count={3}
-                  title="Locations"
-                  description="Antigua · Wilmette · Arlington Heights"
+                  title={t('home.counters.locations')}
+                  description={t('home.counters.locationsDesc')}
                 />
                 <Divider
                   orientation="vertical"
@@ -207,8 +195,8 @@ function Home() {
                 <DefaultCounterCard
                   count={100}
                   suffix="+"
-                  title="Signature Dishes"
-                  description="A curated menu of Northern Italian & French classics"
+                  title={t('home.counters.dishes')}
+                  description={t('home.counters.dishesDesc')}
                 />
               </Grid>
             </Grid>
@@ -227,19 +215,13 @@ function Home() {
                   sx={{ mb: 2 }}
                 />
                 <MKTypography variant="h3" mb={1}>
-                  A Chicago Legacy, Now Global
+                  {t('home.legacy.title')}
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  Desde 1985, Carlos & Carlos ha sido un referente de la alta cocina franco-italiana
-                  en Chicago. Fundado por los hermanos Montiel, nuestro restaurante de manteles
-                  blancos en Arlington Heights r&aacute;pidamente se gan&oacute; un lugar entre la
-                  &eacute;lite culinaria, atrayendo a celebridades como Tom Cruise, Robert De Niro y
-                  Paul Newman.
+                  {t('home.legacy.p1')}
                 </MKTypography>
                 <MKTypography variant="body2" color="text" mb={2}>
-                  Hoy, con tres locaciones en dos pa&iacute;ses, seguimos honrando nuestra
-                  tradici&oacute;n de pasta fresca artesanal, los mejores cortes de carne y una
-                  carta de vinos incomparable.
+                  {t('home.legacy.p2')}
                 </MKTypography>
                 <MKButton
                   component="a"
@@ -247,7 +229,7 @@ function Home() {
                   variant="outlined"
                   color="info"
                 >
-                  Our Story
+                  {t('home.legacy.btn')}
                 </MKButton>
               </Grid>
               <Grid item xs={12} lg={6}>
@@ -256,8 +238,8 @@ function Home() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="restaurant"
-                        title="Pasta Artesanal"
-                        description="Pasta fresca hecha en casa diariamente, siguiendo recetas tradicionales italianas"
+                        title={t('home.infoCards.pasta')}
+                        description={t('home.infoCards.pastaDesc')}
                       />
                     </MKBox>
                   </Grid>
@@ -265,8 +247,8 @@ function Home() {
                     <MKBox mb={3}>
                       <DefaultInfoCard
                         icon="local_shipping"
-                        title="Ingredientes Premium"
-                        description="Los mejores ingredientes importados de Italia y productos locales frescos"
+                        title={t('home.infoCards.ingredients')}
+                        description={t('home.infoCards.ingredientsDesc')}
                       />
                     </MKBox>
                   </Grid>
@@ -274,17 +256,17 @@ function Home() {
                     <MKBox mb={{ xs: 3, md: 0 }}>
                       <DefaultInfoCard
                         icon="wine_bar"
-                        title="Carta de Vinos"
-                        description="Extensa selección de vinos italianos y del mundo, cuidadosamente seleccionados"
+                        title={t('home.infoCards.wine')}
+                        description={t('home.infoCards.wineDesc')}
                       />
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <DefaultInfoCard
-                      icon="groups"
-                      title="Ambiente Elegante"
-                      description="Servicio impecable en un ambiente sofisticado de manteles blancos"
-                    />
+                      <DefaultInfoCard
+                        icon="groups"
+                        title={t('home.infoCards.ambiance')}
+                        description={t('home.infoCards.ambianceDesc')}
+                      />
                   </Grid>
                 </Grid>
               </Grid>
@@ -313,10 +295,10 @@ function Home() {
                 sx={{ mb: 2 }}
               />
               <MKTypography variant="h2" fontWeight="bold">
-                Our Locations
+                {t('home.locations.title')}
               </MKTypography>
               <MKTypography variant="body1" color="text" mb={3}>
-                Tres locaciones, dos pa&iacute;ses, una tradici&oacute;n.
+                {t('home.locations.subtitle')}
               </MKTypography>
             </Grid>
             <Grid container spacing={3}>
@@ -325,12 +307,12 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title="Antigua Guatemala"
-                  description="4ta. Avenida Sur C.1 Antigua Guatemala, Sacatepéquez"
+                  title={t('home.locations.antigua')}
+                  description={t('home.locations.antiguaDesc')}
                   action={{
                     type: "internal",
                     route: "/pages/restaurant/locations/antigua",
-                    label: "View Details",
+                    label: t('home.locations.viewDetails'),
                   }}
                 />
               </Grid>
@@ -339,12 +321,12 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title="Wilmette, IL"
-                  description="615 Green Bay Road, Wilmette, Illinois 60091"
+                  title={t('home.locations.wilmette')}
+                  description={t('home.locations.wilmetteDesc')}
                   action={{
                     type: "internal",
                     route: "/pages/restaurant/locations/wilmette",
-                    label: "View Details",
+                    label: t('home.locations.viewDetails'),
                   }}
                 />
               </Grid>
@@ -353,69 +335,13 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title="Arlington Heights, IL"
-                  description="27 West Campbell Ave, Arlington Heights, IL 60005"
+                  title={t('home.locations.arlington')}
+                  description={t('home.locations.arlingtonDesc')}
                   action={{
                     type: "internal",
                     route: "/pages/restaurant/locations/chicago",
-                    label: "View Details",
+                    label: t('home.locations.viewDetails'),
                   }}
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </MKBox>
-
-        <Divider sx={{ my: 0 }} />
-
-        <MKBox component="section" py={6}>
-          <Container>
-            <Grid
-              container
-              item
-              xs={12}
-              lg={6}
-              justifyContent="center"
-              sx={{ mx: "auto", textAlign: "center" }}
-            >
-              <MKBadge
-                variant="contained"
-                color="info"
-                badgeContent="testimonials"
-                container
-                sx={{ mb: 2 }}
-              />
-              <MKTypography variant="h2" fontWeight="bold">
-                What Our Guests Say
-              </MKTypography>
-              <MKTypography variant="body1" color="text" mb={2}>
-                We take pride in every dining experience we create.
-              </MKTypography>
-            </Grid>
-            <Grid container spacing={3} sx={{ mt: 4 }}>
-              <Grid item xs={12} md={6} lg={4}>
-                <DefaultReviewCard
-                  name="María G."
-                  date="3 weeks ago"
-                  review="El pepian en Carlos & Carlos Antigua es el mejor que he probado fuera de Chicago. La pasta artesanal y el servicio son increíbles."
-                  rating={5}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <DefaultReviewCard
-                  color="info"
-                  name="James M."
-                  date="1 month ago"
-                  review="Incredible Northern Italian cuisine. The Black Pasta with lobster sauce is outstanding. A true Chicago institution."
-                  rating={5}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <DefaultReviewCard
-                  name="Sofia R."
-                  date="2 weeks ago"
-                  review="Una experiencia gastronómica única. El Veal Carlos y la carta de vinos son simplemente espectaculares. Recomendado 100%."
-                  rating={5}
                 />
               </Grid>
             </Grid>
@@ -434,40 +360,42 @@ function Home() {
               justifyContent="center"
               sx={{ mx: "auto", textAlign: "center" }}
             >
-              <MKBadge
-                variant="contained"
+            <MKTypography variant="h3" mb={2}>
+              {t('home.reserve.title')}
+            </MKTypography>
+            <MKTypography variant="body2" color="text" mb={3}>
+              {t('home.reserve.description')}
+            </MKTypography>
+            <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap" useFlexGap>
+              <MKButton
+                component="a"
+                href="tel:+50278722432"
+                variant="gradient"
                 color="info"
-                badgeContent="reservations"
-                container
-                sx={{ mb: 2 }}
-              />
-              <MKTypography variant="h3" mb={2}>
-                Reserve Your Table
-              </MKTypography>
-              <MKTypography variant="body2" color="text" mb={3}>
-                Nos sentiremos honrados de brindarle una experiencia gastron&oacute;mica &uacute;nica,
-                excelente atenci&oacute;n, en adici&oacute;n al ambiente, confort y locaci&oacute;n.
-              </MKTypography>
-              <Stack direction="row" spacing={2} justifyContent="center">
-                <MKButton
-                  component="a"
-                  href="tel:+50278722432"
-                  variant="gradient"
-                  color="info"
-                  size="large"
-                >
-                  Call +502 7872 2432
-                </MKButton>
-                <MKButton
-                  component="a"
-                  href="https://www.opentable.com/"
-                  variant="outlined"
-                  color="info"
-                  size="large"
-                >
-                  Reserve Online
-                </MKButton>
-              </Stack>
+                size="large"
+              >
+                Antigua: +502 7872 2432
+              </MKButton>
+              <MKButton
+                component="a"
+                href="tel:8479205058"
+                variant="gradient"
+                color="info"
+                size="large"
+              >
+                Wilmette: 847-920-5058
+              </MKButton>
+              <MKButton
+                component="a"
+                href="tel:8472592600"
+                variant="gradient"
+                color="info"
+                size="large"
+              >
+                Chicago: 847-259-2600
+              </MKButton>
+
+            </Stack>
             </Grid>
           </Container>
         </MKBox>

@@ -2,9 +2,10 @@ import Icon from "@mui/material/Icon";
 
 import Home from "layouts/pages/restaurant/home";
 import Menus from "layouts/pages/restaurant/menus";
+import Gallery from "layouts/pages/restaurant/gallery";
 import Locations from "layouts/pages/restaurant/locations";
 import AboutUs from "layouts/pages/restaurant/about-us";
-import Events from "layouts/pages/restaurant/events";
+
 import ContactUs from "layouts/pages/restaurant/contact-us";
 
 const routes = [
@@ -27,41 +28,31 @@ const routes = [
     component: <Menus />,
   },
   {
+    name: "gallery",
+    icon: <Icon>photo_camera</Icon>,
+    route: "/pages/restaurant/gallery",
+    component: <Gallery />,
+  },
+  {
     name: "locations",
     icon: <Icon>place</Icon>,
     collapse: [
       {
-        name: "guatemala",
-        collapse: [
-          {
-            name: "Antigua Guatemala",
-            route: "/pages/restaurant/locations/antigua",
-            component: <Locations />,
-          },
-        ],
+        name: "Antigua Guatemala",
+        route: "/pages/restaurant/locations/antigua",
+        component: <Locations />,
       },
       {
-        name: "united states",
-        collapse: [
-          {
-            name: "Wilmette, IL",
-            route: "/pages/restaurant/locations/wilmette",
-            component: <Locations />,
-          },
-          {
-            name: "Arlington Heights, IL",
-            route: "/pages/restaurant/locations/chicago",
-            component: <Locations />,
-          },
-        ],
+        name: "Wilmette, IL",
+        route: "/pages/restaurant/locations/wilmette",
+        component: <Locations />,
+      },
+      {
+        name: "Arlington Heights, IL",
+        route: "/pages/restaurant/locations/chicago",
+        component: <Locations />,
       },
     ],
-  },
-  {
-    name: "events",
-    icon: <Icon>event</Icon>,
-    route: "/pages/restaurant/events",
-    component: <Events />,
   },
   {
     name: "contact",

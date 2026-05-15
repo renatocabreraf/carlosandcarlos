@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLanguage } from "i18n/context";
 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -30,6 +31,7 @@ const locations = [
 ];
 
 function Menus() {
+  const { t } = useLanguage();
   const [locTab, setLocTab] = useState(0);
   const [catTab, setCatTab] = useState(0);
 
@@ -46,12 +48,6 @@ function Menus() {
         brand="Carlos & Carlos"
         brandLogo={brandLogo}
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.opentable.com/",
-          label: "reservations",
-          color: "info",
-        }}
       />
       <MKBox
         minHeight="40vh"
@@ -90,10 +86,10 @@ function Menus() {
                 [breakpoints.down("md")]: { fontSize: size["3xl"] },
               })}
             >
-              Our Menu
+              {t('menus.hero.title')}
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8}>
-              Northern Italian & French cuisine. Pasta artesanal desde 1985.
+              {t('menus.hero.subtitle')}
             </MKTypography>
           </Grid>
         </Container>
@@ -110,25 +106,59 @@ function Menus() {
         }}
       >
         <Container sx={{ mt: 4, mb: 6 }}>
-          <AppBar position="static" color="transparent" sx={{ mb: 3 }}>
-            <Tabs value={locTab} onChange={handleLocChange} variant="fullWidth">
+          <AppBar position="static" color="transparent" sx={{ mb: 3, bgcolor: "transparent", boxShadow: "none" }}>
+            <Tabs
+              value={locTab}
+              onChange={handleLocChange}
+              variant="fullWidth"
+              TabIndicatorProps={{ sx: { bgcolor: "#C8A96B", height: 3 } }}
+            >
               {locations.map((l) => (
-                <Tab key={l.key} label={l.label} />
+                <Tab
+                  key={l.key}
+                  label={l.label}
+                  sx={{
+                    transition: "all 0.3s ease",
+                    fontWeight: 600,
+                    fontSize: "0.85rem",
+                    opacity: "1 !important",
+                    color: locTab === locations.indexOf(l) ? "#111" : "#fff !important",
+                    bgcolor: locTab === locations.indexOf(l) ? "#fff" : "rgba(0,0,0,0.5)",
+                    "&:hover": {
+                      bgcolor: locTab === locations.indexOf(l) ? "#f0f0f0" : "rgba(0,0,0,0.7)",
+                    },
+                  }}
+                />
               ))}
             </Tabs>
           </AppBar>
 
           <Grid container justifyContent="center">
             <Grid item xs={12} lg={8}>
-              <AppBar position="static" color="transparent" sx={{ mb: 4 }}>
+              <AppBar position="static" color="transparent" sx={{ mb: 4, bgcolor: "transparent", boxShadow: "none" }}>
                 <Tabs
                   value={catTab}
                   onChange={(e, v) => setCatTab(v)}
                   variant="scrollable"
                   scrollButtons="auto"
+                  TabIndicatorProps={{ sx: { bgcolor: "#C8A96B", height: 3 } }}
                 >
                   {current.data.map((cat) => (
-                    <Tab key={cat.label} label={cat.label} />
+                    <Tab
+                      key={cat.label}
+                      label={cat.label}
+                      sx={{
+                        transition: "all 0.3s ease",
+                        fontWeight: 600,
+                        fontSize: "0.8rem",
+                        opacity: "1 !important",
+                        color: catTab === current.data.indexOf(cat) ? "#111" : "#fff !important",
+                        bgcolor: catTab === current.data.indexOf(cat) ? "#fff" : "rgba(0,0,0,0.5)",
+                        "&:hover": {
+                          bgcolor: catTab === current.data.indexOf(cat) ? "#f0f0f0" : "rgba(0,0,0,0.7)",
+                        },
+                      }}
+                    />
                   ))}
                 </Tabs>
               </AppBar>
@@ -170,7 +200,7 @@ function Menus() {
 
               {current.note && (
                 <MKBox mt={4} p={2} bgColor="grey-100" borderRadius="md">
-                  <MKTypography variant="caption" color="text">
+                  <MKTypography variant="caption" color="white">
                     {current.note}
                   </MKTypography>
                 </MKBox>

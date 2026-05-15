@@ -1,7 +1,4 @@
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import MKTypography from "components/MKTypography";
 
@@ -15,16 +12,8 @@ export default {
   },
   socials: [
     {
-      icon: <FacebookIcon />,
-      link: "https://www.facebook.com/",
-    },
-    {
-      icon: <TwitterIcon />,
-      link: "https://twitter.com/",
-    },
-    {
       icon: <InstagramIcon />,
-      link: "https://www.instagram.com/",
+      link: "https://www.instagram.com/carlosycarlos.antigua?igsh=cmYybWZvMmdwMmZk",
     },
   ],
   menus: [
@@ -41,14 +30,14 @@ export default {
       items: [
         { name: "our story", href: "/pages/restaurant/about-us" },
         { name: "menus", href: "/pages/restaurant/menus" },
-        { name: "events", href: "/pages/restaurant/events" },
+        { name: "gallery", href: "/pages/restaurant/gallery" },
         { name: "contact", href: "/pages/restaurant/contact-us" },
       ],
     },
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular" color="white">
-      All rights reserved. Copyright &copy; {date} Carlos & Carlos.
+      &copy; 2026 The Montiel Group.
     </MKTypography>
   ),
 };

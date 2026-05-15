@@ -43,7 +43,10 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+import { useLanguage } from "i18n/context";
+
 function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
+  const { lang, t, toggleLang } = useLanguage();
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -86,10 +89,19 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
+  const navKeyMap = {
+    "home": "nav.home",
+    "our story": "nav.ourStory",
+    "menus": "nav.menus",
+    "gallery": "nav.gallery",
+    "locations": "nav.locations",
+    "contact": "nav.contact",
+  };
+
   const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
     <DefaultNavbarDropdown
       key={name}
-      name={name}
+      name={t(navKeyMap[name] || name)}
       icon={icon}
       href={href}
       route={route}
@@ -167,8 +179,8 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
                           transition: "all 300ms linear",
 
                           "&:hover": {
-                            backgroundColor: grey[200],
-                            color: dark.main,
+                            backgroundColor: "#C8A96B",
+                            color: "#111",
                           },
                         })}
                       >
@@ -225,17 +237,17 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
             fontWeight={item.description ? "bold" : "regular"}
             py={item.description ? 1 : 0.625}
             px={2}
-            sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+            sx={({ borders: { borderRadius } }) => ({
               borderRadius: borderRadius.md,
               cursor: "pointer",
               transition: "all 300ms linear",
 
               "&:hover": {
-                backgroundColor: grey[200],
-                color: dark.main,
+                backgroundColor: "#C8A96B",
+                color: "#111",
 
                 "& *": {
-                  color: dark.main,
+                  color: "#111",
                 },
               },
             })}
@@ -516,6 +528,47 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
             }}
           >
             {renderNavbarItems}
+            <MKBox display="flex" alignItems="center" ml={2} sx={{ gap: 0.5 }}>
+              <MKBox
+                component="span"
+                onClick={() => toggleLang("es")}
+                sx={{
+                  fontSize: "0.75rem",
+                  fontWeight: lang === "es" ? 700 : 400,
+                  color: lang === "es" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+                  cursor: "pointer",
+                  px: 0.5,
+                  lineHeight: 1,
+                  transition: "all 0.2s ease",
+                  letterSpacing: 1,
+                  "&:hover": { color: "#C8A96B" },
+                  userSelect: "none",
+                }}
+              >
+                ES
+              </MKBox>
+              <MKTypography variant="caption" color="white" sx={{ opacity: 0.3, lineHeight: 1 }}>
+                |
+              </MKTypography>
+              <MKBox
+                component="span"
+                onClick={() => toggleLang("en")}
+                sx={{
+                  fontSize: "0.75rem",
+                  fontWeight: lang === "en" ? 700 : 400,
+                  color: lang === "en" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+                  cursor: "pointer",
+                  px: 0.5,
+                  lineHeight: 1,
+                  transition: "all 0.2s ease",
+                  letterSpacing: 1,
+                  "&:hover": { color: "#C8A96B" },
+                  userSelect: "none",
+                }}
+              >
+                EN
+              </MKBox>
+            </MKBox>
           </MKBox>
           <MKBox
             sx={{

@@ -5,6 +5,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
+import { LanguageProvider } from "i18n/context";
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 
@@ -32,13 +33,15 @@ export default function App() {
     });
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/pages/restaurant/home" />} />
-      </Routes>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="/presentation" element={<Presentation />} />
+          <Route path="*" element={<Navigate to="/pages/restaurant/home" />} />
+        </Routes>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

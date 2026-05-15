@@ -27,7 +27,14 @@ import Grid from "@mui/material/Grid";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
+import { useLanguage } from "i18n/context";
+
+import footerImg1 from "assets/images/restaurant/antigua/carlos-04-988x658.jpg";
+import footerImg2 from "assets/images/restaurant/wilmette/wilmette-open-03.jpg";
+import footerImg3 from "assets/images/restaurant/chicago/slider1.jpg";
+
 function DefaultFooter({ content }) {
+  const { t } = useLanguage();
   const { brand, socials, menus, copyright } = content;
 
   return (
@@ -73,7 +80,7 @@ function DefaultFooter({ content }) {
                 mb={1}
                 color="white"
               >
-                {title}
+                {t(`footer.${title}`)}
               </MKTypography>
               <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
                 {items.map(({ name, route, href }) => (
@@ -89,7 +96,7 @@ function DefaultFooter({ content }) {
                         textTransform="capitalize"
                         color="white"
                       >
-                        {name}
+                        {t(`footer.${name.replace(/[\s,-]/g, '')}`)}
                       </MKTypography>
                     ) : (
                       <MKTypography
@@ -100,7 +107,7 @@ function DefaultFooter({ content }) {
                         textTransform="capitalize"
                         color="white"
                       >
-                        {name}
+                        {t(`footer.${name.replace(/[\s,-]/g, '')}`)}
                       </MKTypography>
                     )}
                   </MKBox>
@@ -108,6 +115,55 @@ function DefaultFooter({ content }) {
               </MKBox>
             </Grid>
           ))}
+          <Grid item xs={12} sx={{ mb: 3 }}>
+            <Grid container spacing={2} justifyContent="center">
+              <Grid item xs={4} sm={3} md={2}>
+                <MKBox
+                  component="a"
+                  href="/pages/restaurant/gallery"
+                  sx={{ textDecoration: "none", display: "block" }}
+                >
+                  <MKBox
+                    component="img"
+                    src={footerImg1}
+                    alt="Antigua Guatemala"
+                    width="100%"
+                    sx={{ borderRadius: "6px", height: 80, objectFit: "cover", display: "block", transition: "opacity 0.3s", "&:hover": { opacity: 0.7 } }}
+                  />
+                </MKBox>
+              </Grid>
+              <Grid item xs={4} sm={3} md={2}>
+                <MKBox
+                  component="a"
+                  href="/pages/restaurant/gallery"
+                  sx={{ textDecoration: "none", display: "block" }}
+                >
+                  <MKBox
+                    component="img"
+                    src={footerImg2}
+                    alt="Wilmette"
+                    width="100%"
+                    sx={{ borderRadius: "6px", height: 80, objectFit: "cover", display: "block", transition: "opacity 0.3s", "&:hover": { opacity: 0.7 } }}
+                  />
+                </MKBox>
+              </Grid>
+              <Grid item xs={4} sm={3} md={2}>
+                <MKBox
+                  component="a"
+                  href="/pages/restaurant/gallery"
+                  sx={{ textDecoration: "none", display: "block" }}
+                >
+                  <MKBox
+                    component="img"
+                    src={footerImg3}
+                    alt="Arlington Heights"
+                    width="100%"
+                    sx={{ borderRadius: "6px", height: 80, objectFit: "cover", display: "block", transition: "opacity 0.3s", "&:hover": { opacity: 0.7 } }}
+                  />
+                </MKBox>
+              </Grid>
+            </Grid>
+          </Grid>
           <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
             {copyright}
           </Grid>

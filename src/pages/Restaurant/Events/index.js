@@ -78,12 +78,6 @@ function Events() {
         brand="Carlos & Carlos"
         brandLogo={brandLogo}
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.opentable.com/",
-          label: "reservations",
-          color: "info",
-        }}
       />
       <MKBox
         minHeight="40vh"
