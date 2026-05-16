@@ -390,12 +390,12 @@ function Home() {
             <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap" useFlexGap>
               <MKButton
                 component="a"
-                href="tel:+50278722432"
+                href="tel:8472592600"
                 variant="gradient"
                 color="info"
                 size="large"
               >
-                Antigua: +502 7872 2432
+                Arlington Heights: 847-259-2600
               </MKButton>
               <MKButton
                 component="a"
@@ -408,14 +408,13 @@ function Home() {
               </MKButton>
               <MKButton
                 component="a"
-                href="tel:8472592600"
+                href="tel:+50278722432"
                 variant="gradient"
                 color="info"
                 size="large"
               >
-                Chicago: 847-259-2600
+                Antigua: +502 7872 2432
               </MKButton>
-
             </Stack>
             </Grid>
           </Container>

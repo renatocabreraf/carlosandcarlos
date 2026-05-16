@@ -3,16 +3,38 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-const PAGE_W = 600;
-const PAGE_H = 850;
-const SWIPE_THRESHOLD = 80;
+const BASE_W = 600;
+const BASE_H = 850;
+
+function usePageSize() {
+  const [size, setSize] = useState(() => {
+    if (typeof window === "undefined") return { w: BASE_W, h: BASE_H };
+    const vw = window.innerWidth;
+    const w = Math.min(BASE_W, vw - 32);
+    return { w, h: (w / BASE_W) * BASE_H };
+  });
+
+  useEffect(() => {
+    const onResize = () => {
+      const vw = window.innerWidth;
+      const w = Math.min(BASE_W, vw - 32);
+      setSize({ w, h: (w / BASE_W) * BASE_H });
+    };
+    window.addEventListener("resize", onResize);
+    onResize();
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return size;
+}
 
 function MenuFlipbook({ foodPages, winePages }) {
   const allPages = [...foodPages, ...winePages];
   const sectionOf = (i) => (i < foodPages.length ? "Food" : "Wine");
+  const { w: PAGE_W, h: PAGE_H } = usePageSize();
 
   const [current, setCurrent] = useState(0);
-  const [anim, setAnim] = useState(null); // { dir: 1|-1, progress: 0..1 }
+  const [anim, setAnim] = useState(null);
   const [dragStart, setDragStart] = useState(null);
   const [dragOfs, setDragOfs] = useState(0);
   const raf = useRef(null);
@@ -77,13 +99,13 @@ function MenuFlipbook({ foodPages, winePages }) {
   const pointerUp = useCallback(() => {
     if (dragStart == null) return;
     setDragStart(null);
-    if (Math.abs(dragOfs) > SWIPE_THRESHOLD) {
+    if (Math.abs(dragOfs) > PAGE_W * 0.15) {
       if (dragOfs < 0) flipTo(current + 1);
       else flipTo(current - 1);
     }
     setDragOfs(0);
     if (raf.current) cancelAnimationFrame(raf.current);
-  }, [dragStart, dragOfs, current, flipTo]);
+  }, [dragStart, dragOfs, current, flipTo, PAGE_W]);
 
   useEffect(() => {
     const el = bookRef.current;

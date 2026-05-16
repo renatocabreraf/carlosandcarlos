@@ -161,8 +161,8 @@ function DefaultNavbarMobile({ routes, open }) {
             onClick={() => toggleLang("es")}
             sx={{
               fontSize: "0.85rem",
-              fontWeight: lang === "es" ? 700 : 400,
-              color: lang === "es" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+              fontWeight: lang === "es" ? 700 : 500,
+              color: lang === "es" ? "#C8A96B" : "#555555",
               cursor: "pointer",
               px: 1,
               lineHeight: 1,
@@ -174,7 +174,7 @@ function DefaultNavbarMobile({ routes, open }) {
           >
             ES
           </MKTypography>
-          <MKTypography variant="caption" color="white" sx={{ opacity: 0.3, lineHeight: 1 }}>
+          <MKTypography variant="caption" sx={{ color: "#999999", lineHeight: 1 }}>
             |
           </MKTypography>
           <MKTypography
@@ -182,8 +182,8 @@ function DefaultNavbarMobile({ routes, open }) {
             onClick={() => toggleLang("en")}
             sx={{
               fontSize: "0.85rem",
-              fontWeight: lang === "en" ? 700 : 400,
-              color: lang === "en" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+              fontWeight: lang === "en" ? 700 : 500,
+              color: lang === "en" ? "#C8A96B" : "#555555",
               cursor: "pointer",
               px: 1,
               lineHeight: 1,

@@ -37,9 +37,9 @@ const arlingtonFoodPages = [food1, food2, food3, food4];
 const arlingtonWinePages = [wine1, wine2];
 
 const locations = [
-  { label: "Antigua Guatemala", key: "antigua", data: antiguaMenu, note: "IVA incluido. Se incluirá a la cuenta el 10% de propina." },
-  { label: "Wilmette, IL", key: "wilmette", data: wilmetteMenu, note: "Gluten free pasta +$2.50. 20% gratuity for parties of 8+." },
   { label: "Arlington Heights, IL", key: "chicago", flipbook: true, data: chicagoMenu, note: "Gluten free +$3. Splits +$3. 20% gratuity for parties of 6+." },
+  { label: "Wilmette, IL", key: "wilmette", data: wilmetteMenu, note: "Gluten free pasta +$2.50. 20% gratuity for parties of 8+." },
+  { label: "Antigua Guatemala", key: "antigua", data: antiguaMenu, note: "IVA incluido. Se incluirá a la cuenta el 10% de propina." },
 ];
 
 function Menus() {
