@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.1ac94e01.js",
-    "static/media/rotating-card-bg-front.jpeg": "/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
+    "main.js": "/static/js/main.0fe69a90.js",
     "static/media/carlos-29.jpg": "/static/media/carlos-29.fa2eace96a79b1c22000.jpg",
     "static/media/cyc-26.jpg": "/static/media/cyc-26.f9e43c3f7fc6e173f655.jpg",
     "static/media/wilmette.png": "/static/media/wilmette.46eb5d3116d75758e7f1.png",
     "static/media/chicago.png": "/static/media/chicago.cc75309597b5c61310ef.png",
     "static/media/antigua.png": "/static/media/antigua.abde89a7fb6ccd381948.png",
+    "static/media/EDITABLE_Menú Chicago_page-0002.jpg": "/static/media/EDITABLE_Menú Chicago_page-0002.252550790220d688b93c.jpg",
+    "static/media/EDITABLE_Menú Chicago_page-0003.jpg": "/static/media/EDITABLE_Menú Chicago_page-0003.ee9f01895a621385d2ee.jpg",
+    "static/media/EDITABLE_Menú Chicago_page-0004.jpg": "/static/media/EDITABLE_Menú Chicago_page-0004.f54851ba1b6022c200ba.jpg",
+    "static/media/EDITABLE_Menú Chicago_page-0001.jpg": "/static/media/EDITABLE_Menú Chicago_page-0001.58d3daee1bd3a1c4fd72.jpg",
     "static/media/carlos-12.jpg": "/static/media/carlos-12.6d6c9e5df1f3e2ae098e.jpg",
     "static/media/cyc-6.jpg": "/static/media/cyc-6.ca1b84abed89fad9fe7a.jpg",
     "static/media/cyc-37.jpg": "/static/media/cyc-37.2b42ef60b491656a5b44.jpg",
@@ -21,22 +24,21 @@
     "static/media/cyc-71.jpg": "/static/media/cyc-71.f4142f10eb620c9a5e7c.jpg",
     "static/media/cyc-123.jpg": "/static/media/cyc-123.16c8b86262c47cd01db8.jpg",
     "static/media/cyc-61.jpg": "/static/media/cyc-61.216aeda0466f08330bfe.jpg",
-    "static/media/bg-presentation.jpg": "/static/media/bg-presentation.889630297390d27e8dfb.jpg",
     "static/media/carlos-11.jpg": "/static/media/carlos-11.5dde9f25f18a4235c5b2.jpg",
     "static/media/slider_logo (1).jpg": "/static/media/slider_logo (1).e038d25328b1f636e62f.jpg",
-    "static/media/rotating-card-bg-back.jpeg": "/static/media/rotating-card-bg-back.183088de91adb283a9ae.jpeg",
     "static/media/wilmette-open-02.jpg": "/static/media/wilmette-open-02.dd43c368f1524e36b9a3.jpg",
+    "static/media/EDITABLE_Menú Chicago vinos2_page-0001.jpg": "/static/media/EDITABLE_Menú Chicago vinos2_page-0001.7de688fad113ec50924d.jpg",
     "static/media/carlos-02.jpg": "/static/media/carlos-02.f541ff7cd2b202da8a57.jpg",
     "static/media/wilmette-open-03.jpg": "/static/media/wilmette-open-03.217463e93b8ab828c53f.jpg",
     "static/media/espanol_menu_antigua_01-04-2023_contraportada.jpg": "/static/media/espanol_menu_antigua_01-04-2023_contraportada.70f5e09096998d4698fa.jpg",
     "static/media/carlos-09.jpg": "/static/media/carlos-09.4504eff71c4a64afbe59.jpg",
     "static/media/carlos-011.jpg": "/static/media/carlos-011.63aa2ed4343f88d87604.jpg",
     "static/media/c-c-desayunos-109.jpg": "/static/media/c-c-desayunos-109.6567afdfb47cada73d72.jpg",
-    "static/media/waves-white.svg": "/static/media/waves-white.7e7579c6e93ead70064fb4e8dd899f32.svg",
     "static/media/home04.jpg": "/static/media/home04.87f00b2f6f7424fc6578.jpg",
     "static/media/slider81.jpg": "/static/media/slider81.62a56c082e384057529d.jpg",
     "static/media/c-c-desayunos-100.jpg": "/static/media/c-c-desayunos-100.3698a7c0e0f26685ad62.jpg",
     "static/media/carlos-04.jpg": "/static/media/carlos-04.b4f94007150a987db133.jpg",
+    "static/media/EDITABLE_Menú Chicago vinos2_page-0002.jpg": "/static/media/EDITABLE_Menú Chicago vinos2_page-0002.89ab56b4397fcfdd2f28.jpg",
     "static/media/c-c-desayunos-102.jpg": "/static/media/c-c-desayunos-102.a6c8f8b4812b4d2786cc.jpg",
     "static/media/carlos-16.jpg": "/static/media/carlos-16.d040d0eea037b3409008.jpg",
     "static/media/cyc-41.jpg": "/static/media/cyc-41.dc7e83c1c5532287d28b.jpg",
@@ -108,15 +110,10 @@
     "static/media/carlos-23-988x658.jpg": "/static/media/carlos-23-988x658.58f3fcddb42eae0654d3.jpg",
     "static/media/carlos-19-988x658 (1).jpg": "/static/media/carlos-19-988x658 (1).793a69d6c67d28291c2a.jpg",
     "static/media/carlos-19-988x658.jpg": "/static/media/carlos-19-988x658.793a69d6c67d28291c2a.jpg",
-    "static/media/logo-digitalocean.svg": "/static/media/logo-digitalocean.a1f147b01387952368e3180edf221c96.svg",
-    "static/media/logo-vodafone.svg": "/static/media/logo-vodafone.b3e8486c0cac220bc3a31c9eab049b21.svg",
-    "static/media/logo-facebook.svg": "/static/media/logo-facebook.106d2ac0ece089e3c6def0a36c283ef7.svg",
-    "static/media/logo-apple.svg": "/static/media/logo-apple.f9c2682e61da98dfbc703a4dccd0d064.svg",
-    "static/media/logo-nasa.svg": "/static/media/logo-nasa.c5d11f8820bfde5fd64db0074156e06c.svg",
     "index.html": "/index.html",
-    "main.1ac94e01.js.map": "/static/js/main.1ac94e01.js.map"
+    "main.0fe69a90.js.map": "/static/js/main.0fe69a90.js.map"
   },
   "entrypoints": [
-    "static/js/main.1ac94e01.js"
+    "static/js/main.0fe69a90.js"
   ]
 }

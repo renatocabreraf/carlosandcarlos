@@ -7,7 +7,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 import { LanguageProvider } from "i18n/context";
 import theme from "assets/theme";
-import Presentation from "layouts/pages/presentation";
 
 import routes from "routes";
 
@@ -38,7 +37,6 @@ export default function App() {
         <CssBaseline />
         <Routes>
           {getRoutes(routes)}
-          <Route path="/presentation" element={<Presentation />} />
           <Route path="*" element={<Navigate to="/pages/restaurant/home" />} />
         </Routes>
       </ThemeProvider>

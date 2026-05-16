@@ -32,7 +32,10 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
+import { useLanguage } from "i18n/context";
+
 function DefaultNavbarMobile({ routes, open }) {
+  const { lang, toggleLang } = useLanguage();
   const [collapse, setCollapse] = useState("");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
@@ -152,6 +155,47 @@ function DefaultNavbarMobile({ routes, open }) {
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MKBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
+        <MKBox display="flex" alignItems="center" justifyContent="center" sx={{ gap: 1, py: 2 }}>
+          <MKTypography
+            component="span"
+            onClick={() => toggleLang("es")}
+            sx={{
+              fontSize: "0.85rem",
+              fontWeight: lang === "es" ? 700 : 400,
+              color: lang === "es" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+              cursor: "pointer",
+              px: 1,
+              lineHeight: 1,
+              transition: "all 0.2s ease",
+              letterSpacing: 1,
+              "&:hover": { color: "#C8A96B" },
+              userSelect: "none",
+            }}
+          >
+            ES
+          </MKTypography>
+          <MKTypography variant="caption" color="white" sx={{ opacity: 0.3, lineHeight: 1 }}>
+            |
+          </MKTypography>
+          <MKTypography
+            component="span"
+            onClick={() => toggleLang("en")}
+            sx={{
+              fontSize: "0.85rem",
+              fontWeight: lang === "en" ? 700 : 400,
+              color: lang === "en" ? "#C8A96B" : "rgba(255,255,255,0.6)",
+              cursor: "pointer",
+              px: 1,
+              lineHeight: 1,
+              transition: "all 0.2s ease",
+              letterSpacing: 1,
+              "&:hover": { color: "#C8A96B" },
+              userSelect: "none",
+            }}
+          >
+            EN
+          </MKTypography>
+        </MKBox>
       </MKBox>
     </Collapse>
   );
