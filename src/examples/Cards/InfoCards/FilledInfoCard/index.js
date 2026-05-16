@@ -141,7 +141,7 @@ FilledInfoCard.propTypes = {
     "dark",
   ]),
   icon: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   description: PropTypes.string.isRequired,
   action: PropTypes.oneOfType([
     PropTypes.bool,

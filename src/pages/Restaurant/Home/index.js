@@ -307,11 +307,18 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title={t('home.locations.antigua')}
-                  description={t('home.locations.antiguaDesc')}
+                  title={
+                    <span>
+                      {t('home.locations.arlington')}{' '}
+                      <span style={{ fontSize: "0.7rem", fontWeight: 400, opacity: 0.8 }}>
+                        (USA)
+                      </span>
+                    </span>
+                  }
+                  description={t('home.locations.arlingtonDesc')}
                   action={{
                     type: "internal",
-                    route: "/pages/restaurant/locations/antigua",
+                    route: "/pages/restaurant/locations/chicago",
                     label: t('home.locations.viewDetails'),
                   }}
                 />
@@ -321,7 +328,14 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title={t('home.locations.wilmette')}
+                  title={
+                    <span>
+                      {t('home.locations.wilmette')}{' '}
+                      <span style={{ fontSize: "0.7rem", fontWeight: 400, opacity: 0.8 }}>
+                        (USA)
+                      </span>
+                    </span>
+                  }
                   description={t('home.locations.wilmetteDesc')}
                   action={{
                     type: "internal",
@@ -335,11 +349,18 @@ function Home() {
                   variant="gradient"
                   color="info"
                   icon="location_on"
-                  title={t('home.locations.arlington')}
-                  description={t('home.locations.arlingtonDesc')}
+                  title={
+                    <span>
+                      {t('home.locations.antigua')}{' '}
+                      <span style={{ fontSize: "0.7rem", fontWeight: 400, opacity: 0.8 }}>
+                        (Guatemala)
+                      </span>
+                    </span>
+                  }
+                  description={t('home.locations.antiguaDesc')}
                   action={{
                     type: "internal",
-                    route: "/pages/restaurant/locations/chicago",
+                    route: "/pages/restaurant/locations/antigua",
                     label: t('home.locations.viewDetails'),
                   }}
                 />

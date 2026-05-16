@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.0fe69a90.js",
+    "main.js": "/static/js/main.92c0424a.js",
     "static/media/carlos-29.jpg": "/static/media/carlos-29.fa2eace96a79b1c22000.jpg",
     "static/media/cyc-26.jpg": "/static/media/cyc-26.f9e43c3f7fc6e173f655.jpg",
     "static/media/wilmette.png": "/static/media/wilmette.46eb5d3116d75758e7f1.png",
@@ -111,9 +111,9 @@
     "static/media/carlos-19-988x658 (1).jpg": "/static/media/carlos-19-988x658 (1).793a69d6c67d28291c2a.jpg",
     "static/media/carlos-19-988x658.jpg": "/static/media/carlos-19-988x658.793a69d6c67d28291c2a.jpg",
     "index.html": "/index.html",
-    "main.0fe69a90.js.map": "/static/js/main.0fe69a90.js.map"
+    "main.92c0424a.js.map": "/static/js/main.92c0424a.js.map"
   },
   "entrypoints": [
-    "static/js/main.0fe69a90.js"
+    "static/js/main.92c0424a.js"
   ]
 }
