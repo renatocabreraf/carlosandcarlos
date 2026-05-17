@@ -6,6 +6,7 @@ const es = {
     gallery: "gallery",
     locations: "locations",
     contact: "contact",
+    privateEvents: "eventos privados",
   },
   home: {
     hero: {
@@ -51,6 +52,11 @@ const es = {
     reserve: {
       title: "Reserve su Mesa",
       description: "Nos sentiremos honrados de brindarle una experiencia gastronómica única, excelente atención, en adición al ambiente, confort y locación.",
+    },
+    giftCards: {
+      title: "Gift Cards Disponibles",
+      description: "Regala una experiencia gastronómica inolvidable. Perfecto para cualquier ocasión.",
+      action: "Más Información",
     },
   },
   about: {
@@ -121,6 +127,18 @@ const es = {
   locations: {
     hours: "HORARIO",
     visitOther: "Visita Nuestras Otras Locaciones",
+  },
+  privateEvents: {
+    hero: {
+      title: "Eventos Privados",
+      subtitle: "Celebre con nosotros — una experiencia gastronómica exclusiva.",
+    },
+    title: "Coordine su Evento Especial",
+    description: "En Carlos & Carlos, estamos encantados de recibirlo para coordinar eventos privados en horarios de medio día y cena. Ya sea una comida corporativa, una celebración familiar o una reunión íntima, nuestro equipo se asegurará de que cada detalle sea perfecto.",
+    details: "Contamos con espacios versátiles y un menú personalizable para adaptarnos a sus necesidades. Nuestro servicio de primer nivel y nuestra cocina excepcional harán de su evento una experiencia inolvidable.",
+    call: "Llámenos para reservar o solicitar más información.",
+    moreInfo: "Más Información",
+    phones: "Reservaciones",
   },
   footer: {
     locations: "locations",

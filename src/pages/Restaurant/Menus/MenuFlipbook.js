@@ -28,7 +28,7 @@ function usePageSize() {
   return size;
 }
 
-function MenuFlipbook({ foodPages, winePages }) {
+function MenuFlipbook({ foodPages, winePages = [] }) {
   const allPages = [...foodPages, ...winePages];
   const sectionOf = (i) => (i < foodPages.length ? "Food" : "Wine");
   const { w: PAGE_W, h: PAGE_H } = usePageSize();

@@ -39,9 +39,7 @@ const allLocations = [
     email: "restaurante@carlosandcarlosantigua.com",
     coordinates: { lat: 14.5545, lng: -90.7332 },
     hours: [
-      "Martes, Miércoles y Jueves: 12:00 - 21:30",
-      "Viernes y Sábado: 12:00 - 22:00",
-      "Domingo: 12:00 - 20:30",
+      "Martes a Domingo: 15:00 - 22:00",
       "Lunes: Cerrado",
     ],
     story:

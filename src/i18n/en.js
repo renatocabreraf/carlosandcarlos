@@ -6,6 +6,7 @@ const en = {
     gallery: "gallery",
     locations: "locations",
     contact: "contact",
+    privateEvents: "private events",
   },
   home: {
     hero: {
@@ -51,6 +52,11 @@ const en = {
     reserve: {
       title: "Reserve Your Table",
       description: "We would be honored to provide you with a unique dining experience, excellent service, in addition to the ambiance, comfort and location.",
+    },
+    giftCards: {
+      title: "Gift Cards Available",
+      description: "Give the gift of an unforgettable dining experience. Perfect for any occasion.",
+      action: "More Information",
     },
   },
   about: {
@@ -121,6 +127,18 @@ const en = {
   locations: {
     hours: "HOURS",
     visitOther: "Visit Our Other Locations",
+  },
+  privateEvents: {
+    hero: {
+      title: "Private Events",
+      subtitle: "Celebrate with us — an exclusive dining experience.",
+    },
+    title: "Coordinate Your Special Event",
+    description: "At Carlos & Carlos, we are delighted to host private events during lunch and dinner hours. Whether it's a corporate gathering, family celebration, or an intimate party, our team will ensure every detail is perfect.",
+    details: "We offer versatile spaces and a customizable menu to suit your needs. Our first-class service and exceptional cuisine will make your event an unforgettable experience.",
+    call: "Call us to book or request more information.",
+    moreInfo: "More Information",
+    phones: "Reservations",
   },
   footer: {
     locations: "locations",

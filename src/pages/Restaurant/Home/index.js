@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "i18n/context";
 
 import Container from "@mui/material/Container";
@@ -28,6 +29,8 @@ import hero1 from "assets/images/restaurant/antigua/carlos-04-988x658.jpg";
 import hero2 from "assets/images/restaurant/chicago/slider1.jpg";
 import hero3 from "assets/images/restaurant/wilmette/wilmette-open-03.jpg";
 import hero4 from "assets/images/restaurant/antigua/carlos-13-1.jpg";
+import giftBg from "assets/images/restaurant/chicago/carlos-03.jpg";
+import giftCardImg from "assets/images/gift-card.png";
 
 const heroSlides = [hero1, hero2, hero3, hero4];
 
@@ -420,6 +423,67 @@ function Home() {
           </Container>
         </MKBox>
       </Card>
+
+      <MKBox
+        component="section"
+        py={8}
+        sx={{
+          backgroundImage: ({
+            palette: { gradients },
+            functions: { linearGradient, rgba },
+          }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.7),
+              rgba(gradients.dark.state, 0.7)
+            )}, url(${giftBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <Container>
+          <Grid
+            container
+            item
+            xs={12}
+            md={8}
+            lg={6}
+            flexDirection="column"
+            alignItems="center"
+            sx={{ mx: "auto", textAlign: "center" }}
+          >
+            <MKBox
+              component="img"
+              src={giftCardImg}
+              alt="Carlos & Carlos"
+              sx={{
+                width: "100%",
+                maxWidth: 500,
+                height: "auto",
+                borderRadius: 2,
+                mb: 4,
+                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+              }}
+            />
+            <MKTypography variant="h3" color="white" mb={2}>
+              {t('home.giftCards.title')}
+            </MKTypography>
+            <MKTypography variant="body1" color="white" opacity={0.85} mb={4}>
+              {t('home.giftCards.description')}
+            </MKTypography>
+            <MKButton
+              component={Link}
+              to="/pages/restaurant/contact-us"
+              variant="gradient"
+              color="info"
+              size="large"
+            >
+              {t('home.giftCards.action')}
+            </MKButton>
+          </Grid>
+        </Container>
+      </MKBox>
+
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>

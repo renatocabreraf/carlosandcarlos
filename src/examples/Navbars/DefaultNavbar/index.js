@@ -95,6 +95,7 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
     "menus": "nav.menus",
     "gallery": "nav.gallery",
     "locations": "nav.locations",
+    "private events": "nav.privateEvents",
     "contact": "nav.contact",
   };
 

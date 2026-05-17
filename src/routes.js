@@ -5,6 +5,7 @@ import Menus from "layouts/pages/restaurant/menus";
 import Gallery from "layouts/pages/restaurant/gallery";
 import Locations from "layouts/pages/restaurant/locations";
 import AboutUs from "layouts/pages/restaurant/about-us";
+import PrivateEvents from "layouts/pages/restaurant/private-events";
 
 import ContactUs from "layouts/pages/restaurant/contact-us";
 
@@ -20,6 +21,12 @@ const routes = [
     icon: <Icon>info</Icon>,
     route: "/pages/restaurant/about-us",
     component: <AboutUs />,
+  },
+  {
+    name: "private events",
+    icon: <Icon>celebration</Icon>,
+    route: "/pages/restaurant/private-events",
+    component: <PrivateEvents />,
   },
   {
     name: "menus",
