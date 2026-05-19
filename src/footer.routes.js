@@ -20,9 +20,9 @@ export default {
     {
       name: "locations",
       items: [
-        { name: "Antigua Guatemala", href: "/pages/restaurant/locations/antigua" },
-        { name: "Wilmette, IL", href: "/pages/restaurant/locations/wilmette" },
         { name: "Arlington Heights, IL", href: "/pages/restaurant/locations/chicago" },
+        { name: "Wilmette, IL", href: "/pages/restaurant/locations/wilmette" },
+        { name: "Antigua Guatemala", href: "/pages/restaurant/locations/antigua" },
       ],
     },
     {

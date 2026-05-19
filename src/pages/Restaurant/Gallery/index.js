@@ -25,9 +25,9 @@ function importAll(r) {
 
 const locations = [
   {
-    label: "Antigua Guatemala",
-    key: "antigua",
-    images: importAll(require.context("../../../assets/images/restaurant/antigua", false, /\.(jpg|jpeg|png)$/)),
+    label: "Arlington Heights, IL",
+    key: "chicago",
+    images: importAll(require.context("../../../assets/images/restaurant/chicago", false, /\.(jpg|jpeg|png)$/)),
   },
   {
     label: "Wilmette, IL",
@@ -35,9 +35,9 @@ const locations = [
     images: importAll(require.context("../../../assets/images/restaurant/wilmette", false, /\.(jpg|jpeg|png)$/)),
   },
   {
-    label: "Arlington Heights, IL",
-    key: "chicago",
-    images: importAll(require.context("../../../assets/images/restaurant/chicago", false, /\.(jpg|jpeg|png)$/)),
+    label: "Antigua Guatemala",
+    key: "antigua",
+    images: importAll(require.context("../../../assets/images/restaurant/antigua", false, /\.(jpg|jpeg|png)$/)),
   },
 ];
 

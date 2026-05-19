@@ -13,9 +13,8 @@ import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 import brandLogo from "assets/images/logos/brand.png";
-import antiguaLogo from "assets/images/logos/antigua.png";
 import chicagoLogo from "assets/images/logos/chicago.png";
-import wilmetteLogo from "assets/images/logos/wilmette.png";
+import antiguaLogo from "assets/images/logos/antigua.png";
 
 import bgImage from "assets/images/restaurant/antigua/carlos-07-988x658.jpg";
 
@@ -170,7 +169,7 @@ function AboutUs() {
             </Grid>
 
             <Grid container spacing={4} alignItems="stretch">
-              <Grid item xs={12} md={4} display="flex">
+              <Grid item xs={12} md={6} display="flex">
                 <MKBox
                   bgColor="rgba(255,255,255,0.05)"
                   borderRadius="xl"
@@ -197,34 +196,7 @@ function AboutUs() {
                   </MKTypography>
                 </MKBox>
               </Grid>
-              <Grid item xs={12} md={4} display="flex">
-                <MKBox
-                  bgColor="rgba(255,255,255,0.05)"
-                  borderRadius="xl"
-                  p={3}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  textAlign="center"
-                  width="100%"
-                  sx={{ backdropFilter: "blur(10px)" }}
-                >
-                  <MKBox
-                    component="img"
-                    src={wilmetteLogo}
-                    alt="Wilmette"
-                    width="100%"
-                    sx={{ maxWidth: 100, height: 70, objectFit: "contain", mb: 2 }}
-                  />
-                  <MKTypography variant="h5" color="white" mb={1}>
-                    {t('about.milestones.guatemala')}
-                  </MKTypography>
-                  <MKTypography variant="body2" color="white" opacity={0.8}>
-                    {t('about.milestones.guatemalaDesc')}
-                  </MKTypography>
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} md={4} display="flex">
+              <Grid item xs={12} md={6} display="flex">
                 <MKBox
                   bgColor="rgba(255,255,255,0.05)"
                   borderRadius="xl"

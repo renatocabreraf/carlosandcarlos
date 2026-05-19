@@ -24,7 +24,7 @@ const en = {
       years: "Years of Tradition",
       yearsDesc: "Serving excellence since 1985 in Chicago",
       locations: "Locations",
-      locationsDesc: "Antigua · Wilmette · Arlington Heights",
+      locationsDesc: "Arlington Heights · Wilmette · Antigua",
       dishes: "Signature Dishes",
       dishesDesc: "A curated menu of Northern Italian & French classics",
     },
@@ -76,7 +76,7 @@ const en = {
       recognition: "International Recognition",
       recognitionDesc: "Acclaimed by critics and celebrities from around the world",
       locations: "3 Locations",
-      locationsDesc: "Antigua Guatemala, Wilmette and Arlington Heights",
+        locationsDesc: "Arlington Heights, Wilmette and Antigua Guatemala",
     },
     milestones: {
       title: "Our History",

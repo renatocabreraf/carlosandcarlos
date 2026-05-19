@@ -124,10 +124,10 @@ function ContactUs() {
                   variant="caption"
                   color="text"
                   component="a"
-                  href="tel:+50278722432"
+                  href="tel:8472592600"
                   display="block"
                 >
-                  Antigua: +502 7872 2432
+                  Chicago: 847-259-2600
                 </MKTypography>
                 <MKTypography
                   variant="caption"
@@ -142,22 +142,19 @@ function ContactUs() {
                   variant="caption"
                   color="text"
                   component="a"
-                  href="tel:8472592600"
+                  href="tel:+50278722432"
                   display="block"
                 >
-                  Chicago: 847-259-2600
+                  Antigua: +502 7872 2432
                 </MKTypography>
               </MKBox>
 
               <MKBox mb={3}>
                 <MKTypography variant="button" fontWeight="bold" display="block" mb={0.5}>
-                  Antigua Guatemala
+                  Arlington Heights, IL
                 </MKTypography>
                 <MKTypography variant="caption" color="text">
-                  4ta. Avenida Sur C.1, Antigua Guatemala, Sacatep&eacute;quez
-                </MKTypography>
-                <MKTypography variant="caption" color="text" component="a" href="mailto:restaurante@carlosandcarlosantigua.com" display="block">
-                  restaurante@carlosandcarlosantigua.com
+                  27 West Campbell Ave, Arlington Heights, IL 60005
                 </MKTypography>
               </MKBox>
 
@@ -172,10 +169,13 @@ function ContactUs() {
 
               <MKBox mb={3}>
                 <MKTypography variant="button" fontWeight="bold" display="block" mb={0.5}>
-                  Arlington Heights, IL
+                  Antigua Guatemala
                 </MKTypography>
                 <MKTypography variant="caption" color="text">
-                  27 West Campbell Ave, Arlington Heights, IL 60005
+                  4ta. Avenida Sur C.1, Antigua Guatemala, Sacatep&eacute;quez
+                </MKTypography>
+                <MKTypography variant="caption" color="text" component="a" href="mailto:restaurante@carlosandcarlosantigua.com" display="block">
+                  restaurante@carlosandcarlosantigua.com
                 </MKTypography>
               </MKBox>
             </Grid>
@@ -207,9 +207,9 @@ function ContactUs() {
                       }}
                     >
                       <option value="" disabled>{t('contact.form.select')}</option>
-                      <option value="antigua">{t('contact.form.antigua')}</option>
-                      <option value="wilmette">{t('contact.form.wilmette')}</option>
                       <option value="chicago">{t('contact.form.arlington')}</option>
+                      <option value="wilmette">{t('contact.form.wilmette')}</option>
+                      <option value="antigua">{t('contact.form.antigua')}</option>
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={6}>

@@ -45,8 +45,8 @@ const routes = [
     icon: <Icon>place</Icon>,
     collapse: [
       {
-        name: "Antigua Guatemala",
-        route: "/pages/restaurant/locations/antigua",
+        name: "Arlington Heights, IL",
+        route: "/pages/restaurant/locations/chicago",
         component: <Locations />,
       },
       {
@@ -55,8 +55,8 @@ const routes = [
         component: <Locations />,
       },
       {
-        name: "Arlington Heights, IL",
-        route: "/pages/restaurant/locations/chicago",
+        name: "Antigua Guatemala",
+        route: "/pages/restaurant/locations/antigua",
         component: <Locations />,
       },
     ],

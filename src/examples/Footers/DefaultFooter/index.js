@@ -29,9 +29,9 @@ import MKTypography from "components/MKTypography";
 
 import { useLanguage } from "i18n/context";
 
-import footerImg1 from "assets/images/restaurant/antigua/carlos-04-988x658.jpg";
+import footerImg1 from "assets/images/restaurant/chicago/slider1.jpg";
 import footerImg2 from "assets/images/restaurant/wilmette/wilmette-open-03.jpg";
-import footerImg3 from "assets/images/restaurant/chicago/slider1.jpg";
+import footerImg3 from "assets/images/restaurant/antigua/carlos-04-988x658.jpg";
 
 function DefaultFooter({ content }) {
   const { t } = useLanguage();
@@ -126,7 +126,7 @@ function DefaultFooter({ content }) {
                   <MKBox
                     component="img"
                     src={footerImg1}
-                    alt="Antigua Guatemala"
+                    alt="Arlington Heights"
                     width="100%"
                     sx={{ borderRadius: "6px", height: 80, objectFit: "cover", display: "block", transition: "opacity 0.3s", "&:hover": { opacity: 0.7 } }}
                   />
@@ -156,7 +156,7 @@ function DefaultFooter({ content }) {
                   <MKBox
                     component="img"
                     src={footerImg3}
-                    alt="Arlington Heights"
+                    alt="Antigua Guatemala"
                     width="100%"
                     sx={{ borderRadius: "6px", height: 80, objectFit: "cover", display: "block", transition: "opacity 0.3s", "&:hover": { opacity: 0.7 } }}
                   />

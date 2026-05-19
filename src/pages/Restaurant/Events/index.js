@@ -19,13 +19,13 @@ import bgImage from "assets/images/restaurant/antigua/carlos-13-1.jpg";
 
 const upcomingEvents = [
   {
-    title: "Noche de Vinos Italianos",
-    date: "June 12, 2026",
-    time: "7:00 PM - 10:00 PM",
-    location: "Antigua Guatemala",
+    title: "40th Anniversary Gala Dinner",
+    date: "September 20, 2026",
+    time: "6:00 PM - 11:00 PM",
+    location: "Arlington Heights, IL",
     description:
-      "Una cena exclusiva de varios tiempos maridada con selecciones de las mejores bodegas italianas. Nuestro sommelier guiará un recorrido por las regiones vinícolas de Italia, desde el Piamonte hasta la Toscana.",
-    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/testimonials.jpg",
+      "Celebramos 40 años de excelencia culinaria con una cena de gala que recorrerá los platos más emblemáticos de nuestra historia: Black Pasta, Veal Carlos, y una selección de los mejores vinos de nuestra carta.",
+    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/features.jpg",
   },
   {
     title: "Summer Pasta Making Class",
@@ -37,13 +37,13 @@ const upcomingEvents = [
     image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/blogs.jpg",
   },
   {
-    title: "40th Anniversary Gala Dinner",
-    date: "September 20, 2026",
-    time: "6:00 PM - 11:00 PM",
-    location: "Arlington Heights, IL",
+    title: "Noche de Vinos Italianos",
+    date: "June 12, 2026",
+    time: "7:00 PM - 10:00 PM",
+    location: "Antigua Guatemala",
     description:
-      "Celebramos 40 años de excelencia culinaria con una cena de gala que recorrerá los platos más emblemáticos de nuestra historia: Black Pasta, Veal Carlos, y una selección de los mejores vinos de nuestra carta.",
-    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/features.jpg",
+      "Una cena exclusiva de varios tiempos maridada con selecciones de las mejores bodegas italianas. Nuestro sommelier guiará un recorrido por las regiones vinícolas de Italia, desde el Piamonte hasta la Toscana.",
+    image: "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections/testimonials.jpg",
   },
 ];
 
