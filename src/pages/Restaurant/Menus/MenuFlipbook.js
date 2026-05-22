@@ -159,7 +159,7 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
           overflow: "hidden",
           borderRadius: 1,
           boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-          bgcolor: "#111",
+          bgcolor: "#fff",
           mb: 2,
         }}
       >
@@ -172,39 +172,39 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              bgcolor: "#1C1C1C",
-            }}
-          >
-            <img
-              src={allPages[nextIdx]}
-              alt={`Page ${nextIdx + 1}`}
-              draggable={false}
-              style={{
-                width: PAGE_W,
-                height: PAGE_H,
-                objectFit: "contain",
-                display: "block",
-                userSelect: "none",
-                WebkitUserSelect: "none",
-                pointerEvents: "none",
+                bgcolor: "#fff",
               }}
-            />
-          </MKBox>
-        )}
+            >
+              <img
+                src={allPages[nextIdx]}
+                alt={`Page ${nextIdx + 1}`}
+                draggable={false}
+                style={{
+                  width: PAGE_W,
+                  height: PAGE_H,
+                  objectFit: "fill",
+                  display: "block",
+                  userSelect: "none",
+                  WebkitUserSelect: "none",
+                  pointerEvents: "none",
+                }}
+              />
+            </MKBox>
+          )}
 
-        {Array.from({ length: total }).map((_, i) => {
-          if (i === current || i === nextIdx) return null;
-          return (
-            <MKBox
-              key={i}
-              sx={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 3,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                bgcolor: "#1C1C1C",
+          {Array.from({ length: total }).map((_, i) => {
+            if (i === current || i === nextIdx) return null;
+            return (
+              <MKBox
+                key={i}
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 3,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  bgcolor: "#fff",
               }}
             >
               <img
@@ -214,7 +214,7 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
                 style={{
                   width: PAGE_W,
                   height: PAGE_H,
-                  objectFit: "contain",
+                  objectFit: "fill",
                   display: "block",
                   userSelect: "none",
                   WebkitUserSelect: "none",
@@ -244,7 +244,7 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
             style={{
               width: PAGE_W,
               height: PAGE_H,
-              objectFit: "contain",
+              objectFit: "fill",
               display: "block",
               userSelect: "none",
               WebkitUserSelect: "none",
@@ -321,9 +321,9 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
             justifyContent: "center",
             cursor: current > 0 ? "pointer" : "default",
             opacity: current > 0 ? 1 : 0.3,
-            bgcolor: "rgba(255,255,255,0.08)",
-            "&:hover": current > 0 ? { bgcolor: "rgba(255,255,255,0.18)" } : {},
-            color: "#F5F1E8",
+            bgcolor: "rgba(0,0,0,0.06)",
+            "&:hover": current > 0 ? { bgcolor: "rgba(0,0,0,0.14)" } : {},
+            color: "#333",
             fontSize: "1.3rem",
             fontWeight: "bold",
             userSelect: "none",
@@ -332,7 +332,7 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
         >
           ‹
         </MKBox>
-        <MKTypography variant="body2" color="#F5F1E8" sx={{ minWidth: 80, textAlign: "center", fontWeight: 500 }}>
+        <MKTypography variant="body2" color="#333" sx={{ minWidth: 80, textAlign: "center", fontWeight: 500 }}>
           {current + 1} / {total}
         </MKTypography>
         <MKBox
@@ -346,9 +346,9 @@ function MenuFlipbook({ foodPages, winePages = [] }) {
             justifyContent: "center",
             cursor: current < total - 1 ? "pointer" : "default",
             opacity: current < total - 1 ? 1 : 0.3,
-            bgcolor: "rgba(255,255,255,0.08)",
-            "&:hover": current < total - 1 ? { bgcolor: "rgba(255,255,255,0.18)" } : {},
-            color: "#F5F1E8",
+            bgcolor: "rgba(0,0,0,0.06)",
+            "&:hover": current < total - 1 ? { bgcolor: "rgba(0,0,0,0.14)" } : {},
+            color: "#333",
             fontSize: "1.3rem",
             fontWeight: "bold",
             userSelect: "none",
