@@ -26,10 +26,10 @@ import chicagoMenu from "pages/Restaurant/Menus/data/chicago";
 
 import MenuFlipbook from "./MenuFlipbook";
 
-import food1 from "assets/images/restaurant/arlington-menu/food/EDITABLE_Menú Chicago_page-0001.jpg";
-import food2 from "assets/images/restaurant/arlington-menu/food/EDITABLE_Menú Chicago_page-0002.jpg";
-import food3 from "assets/images/restaurant/arlington-menu/food/EDITABLE_Menú Chicago_page-0003.jpg";
-import food4 from "assets/images/restaurant/arlington-menu/food/EDITABLE_Menú Chicago_page-0004.jpg";
+import food1 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0001.jpg";
+import food2 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0002.jpg";
+import food3 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0003.jpg";
+import food4 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0004.jpg";
 import wine1 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0001.jpg";
 import wine2 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0002.jpg";
 import aes1 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0001.jpg";
