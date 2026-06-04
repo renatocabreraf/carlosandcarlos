@@ -40,17 +40,16 @@ import aen1 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño ca
 import aen2 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0002.png";
 import aen3 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0003.png";
 import aen4 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0004.png";
-import av1 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_15 MAYO_page-0001.jpg";
-import av2 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_15 MAYO_page-0002.jpg";
-import av3 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_15 MAYO_page-0003.jpg";
-import av4 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_15 MAYO_page-0004.jpg";
+import av1 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0001.jpg";
+import av2 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0002.jpg";
+import av3 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0003.jpg";
 import wm1 from "assets/images/restaurant/wilmette-menu/food/wilmette.jpg";
 
 const arlingtonFoodPages = [food1, food2, food3, food4];
 const arlingtonWinePages = [wine1, wine2];
 const antiguaEspanol = [aes1, aes2, aes3, aes4];
 const antiguaIngles = [aen1, aen2, aen3, aen4];
-const antiguaVinos = [av1, av2, av3, av4];
+const antiguaVinos = [av1, av2, av3];
 const wilmetteFoodPages = [wm1];
 
 const locations = [
