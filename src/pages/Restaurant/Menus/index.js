@@ -36,10 +36,10 @@ import aes1 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (
 import aes2 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0002.jpg";
 import aes3 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0003.jpg";
 import aes4 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0004.jpg";
-import aen1 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0001.png";
-import aen2 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0002.png";
-import aen3 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0003.png";
-import aen4 from "assets/images/restaurant/antigua-menu/ingles/Menú (tamaño carta) INGLES_page-0004.png";
+import aen1 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0001.png";
+import aen2 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0002.png";
+import aen3 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0003.png";
+import aen4 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0004.png";
 import av1 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0001.jpg";
 import av2 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0002.jpg";
 import av3 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0003.jpg";
