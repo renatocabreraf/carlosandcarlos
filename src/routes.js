@@ -2,6 +2,7 @@ import Icon from "@mui/material/Icon";
 
 import Home from "layouts/pages/restaurant/home";
 import Menus from "layouts/pages/restaurant/menus";
+import SpecialMenus from "layouts/pages/restaurant/special-menus";
 import Gallery from "layouts/pages/restaurant/gallery";
 import Locations from "layouts/pages/restaurant/locations";
 import AboutUs from "layouts/pages/restaurant/about-us";
@@ -33,6 +34,12 @@ const routes = [
     icon: <Icon>restaurant_menu</Icon>,
     route: "/pages/restaurant/menus",
     component: <Menus />,
+  },
+  {
+    name: "special menus",
+    icon: <Icon>star</Icon>,
+    route: "/pages/restaurant/special-menus",
+    component: <SpecialMenus />,
   },
   {
     name: "gallery",

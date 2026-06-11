@@ -30,6 +30,7 @@ export default {
       items: [
         { name: "our story", href: "/pages/restaurant/about-us" },
         { name: "menus", href: "/pages/restaurant/menus" },
+        { name: "special menus", href: "/pages/restaurant/special-menus" },
         { name: "gallery", href: "/pages/restaurant/gallery" },
         { name: "contact", href: "/pages/restaurant/contact-us" },
       ],

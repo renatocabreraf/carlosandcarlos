@@ -3,6 +3,7 @@ const en = {
     home: "home",
     ourStory: "our story",
     menus: "menus",
+    specialMenus: "special menus",
     gallery: "gallery",
     locations: "locations",
     contact: "contact",
@@ -116,6 +117,12 @@ const en = {
     hero: {
       title: "Our Menu",
       subtitle: "Northern Italian & French cuisine. Artisanal pasta since 1985.",
+    },
+  },
+  specialMenus: {
+    hero: {
+      title: "Special Menus",
+      subtitle: "Discover our special offers and value menus.",
     },
   },
   gallery: {

@@ -3,6 +3,7 @@ const es = {
     home: "home",
     ourStory: "our story",
     menus: "menus",
+    specialMenus: "menús especiales",
     gallery: "gallery",
     locations: "locations",
     contact: "contact",
@@ -116,6 +117,12 @@ const es = {
     hero: {
       title: "Nuestro Menú",
       subtitle: "Cocina del Norte de Italia y Francia. Pasta artesanal desde 1985.",
+    },
+  },
+  specialMenus: {
+    hero: {
+      title: "Menús Especiales",
+      subtitle: "Descubra nuestras ofertas especiales y menús económicos.",
     },
   },
   gallery: {

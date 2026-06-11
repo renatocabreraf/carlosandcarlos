@@ -93,6 +93,7 @@ function DefaultNavbar({ brand, brandLogo, routes, action, center }) {
     "home": "nav.home",
     "our story": "nav.ourStory",
     "menus": "nav.menus",
+    "special menus": "nav.specialMenus",
     "gallery": "nav.gallery",
     "locations": "nav.locations",
     "private events": "nav.privateEvents",
