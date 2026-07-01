@@ -8,6 +8,7 @@ const es = {
     locations: "locations",
     contact: "contact",
     privateEvents: "eventos privados",
+    comingSoon: "próximamente",
   },
   home: {
     hero: {
@@ -43,7 +44,8 @@ const es = {
       title: "Nuestras Locaciones",
       subtitle: "Tres locaciones, dos países, una tradición.",
       antigua: "Antigua Guatemala",
-      antiguaDesc: "4ta. Avenida Sur C.1, Antigua · +502 7872 2432",
+      antiguaDesc: "Próximamente",
+      comingSoonNote: "Próximamente en una nueva ubicación dentro de Antigua Guatemala.",
       wilmette: "Wilmette, IL",
       wilmetteDesc: "615 Green Bay Road, Wilmette · 847-920-5058",
       arlington: "Arlington Heights, IL",
@@ -118,12 +120,16 @@ const es = {
       title: "Nuestro Menú",
       subtitle: "Cocina del Norte de Italia y Francia. Pasta artesanal desde 1985.",
     },
+    antiguaClosed: "Antigua Guatemala",
+    antiguaClosedDesc: "Estamos emocionados de anunciar que pronto abriremos nuestras puertas en una nueva ubicación dentro de Antigua Guatemala. ¡Gracias por su paciencia y apoyo! Estén atentos para más detalles.",
   },
   specialMenus: {
     hero: {
       title: "Menús Especiales",
-      subtitle: "Descubra nuestras ofertas especiales y menús económicos.",
+      subtitle: "Próximamente nuevos menús especiales.",
     },
+    comingSoon: "¡Próximamente!",
+    comingSoonDesc: "Estamos trabajando en nuevos menús especiales para usted. Antigua Guatemala se mudará a una nueva ubicación dentro de la ciudad. ¡Espérenos pronto!",
   },
   gallery: {
     hero: {
@@ -134,6 +140,8 @@ const es = {
   locations: {
     hours: "HORARIO",
     visitOther: "Visita Nuestras Otras Locaciones",
+    antiguaClosed: "Antigua Guatemala — Temporalmente Cerrado",
+    antiguaClosedDesc: "Próximamente en una nueva ubicación dentro de Antigua Guatemala.",
   },
   privateEvents: {
     hero: {

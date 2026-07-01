@@ -20,7 +20,6 @@ import brandLogo from "assets/images/logos/brand.png";
 
 import bgImage from "assets/images/restaurant/antigua/c-c-desayunos-109.jpg";
 
-import antiguaMenu from "pages/Restaurant/Menus/data/antigua";
 import wilmetteMenu from "pages/Restaurant/Menus/data/wilmette";
 import chicagoMenu from "pages/Restaurant/Menus/data/chicago";
 
@@ -32,37 +31,21 @@ import food3 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page
 import food4 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0004.jpg";
 import wine1 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0001.jpg";
 import wine2 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0002.jpg";
-import aes1 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0001.jpg";
-import aes2 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0002.jpg";
-import aes3 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0003.jpg";
-import aes4 from "assets/images/restaurant/antigua-menu/espanol/Menú ESPAÑOL (FINAL 2025)_page-0004.jpg";
-import aen1 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0001.jpg";
-import aen2 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0002.jpg";
-import aen3 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0003.jpg";
-import aen4 from "assets/images/restaurant/antigua-menu/ingles/Menú (sin líneas guías) INGLES_page-0004.jpg";
-import av1 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0001.jpg";
-import av2 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0002.jpg";
-import av3 from "assets/images/restaurant/antigua-menu/vinos/Carta de Bebidas 2026_2 JUNIO_WEB_page-0003.jpg";
 import wm1 from "assets/images/restaurant/wilmette-menu/food/wilmette.jpg";
 
 const arlingtonFoodPages = [food1, food2, food3, food4];
 const arlingtonWinePages = [wine1, wine2];
-const antiguaEspanol = [aes1, aes2, aes3, aes4];
-const antiguaIngles = [aen1, aen2, aen3, aen4];
-const antiguaVinos = [av1, av2, av3];
 const wilmetteFoodPages = [wm1];
 
 const locations = [
   { label: "Arlington Heights, IL", key: "chicago", flipbook: true, data: chicagoMenu, note: "Gluten free +$3. Splits +$3. 20% gratuity for parties of 6+." },
   { label: "Wilmette, IL", key: "wilmette", flipbook: true, data: wilmetteMenu, note: "Gluten free pasta +$2.50. 20% gratuity for parties of 8+." },
-  { label: "Antigua Guatemala", key: "antigua", flipbook: true, bilingual: true, data: antiguaMenu, note: "IVA incluido. Se incluirá a la cuenta el 10% de propina." },
 ];
 
 function Menus() {
   const { t } = useLanguage();
   const [locTab, setLocTab] = useState(0);
   const [catTab, setCatTab] = useState(0);
-  const [antiguaLang, setAntiguaLang] = useState("es");
 
   const current = locations[locTab];
 
@@ -70,8 +53,6 @@ function Menus() {
     setLocTab(v);
     setCatTab(0);
   };
-
-  const antiguaFoodPages = antiguaLang === "es" ? antiguaEspanol : antiguaIngles;
 
   return (
     <>
@@ -170,53 +151,6 @@ function Menus() {
                 <MenuFlipbook foodPages={arlingtonFoodPages} winePages={arlingtonWinePages} />
               ) : current.flipbook && current.key === "wilmette" ? (
                 <MenuFlipbook foodPages={wilmetteFoodPages} />
-              ) : current.flipbook && current.bilingual ? (
-                <>
-                  <MKBox display="flex" justifyContent="center" mb={3} sx={{ gap: 1 }}>
-                    <MKBox
-                      component="span"
-                      onClick={() => setAntiguaLang("es")}
-                      sx={{
-                        fontSize: "0.85rem",
-                        fontWeight: antiguaLang === "es" ? 700 : 500,
-                        color: antiguaLang === "es" ? "#C8A96B" : "#555",
-                        cursor: "pointer",
-                        px: 1.5,
-                        py: 0.5,
-                        borderRadius: 1,
-                        transition: "all 0.2s ease",
-                        letterSpacing: 1,
-                        "&:hover": { color: "#C8A96B" },
-                        userSelect: "none",
-                      }}
-                    >
-                      ESPAÑOL
-                    </MKBox>
-                    <MKTypography variant="caption" sx={{ color: "#999", lineHeight: "28px" }}>
-                      |
-                    </MKTypography>
-                    <MKBox
-                      component="span"
-                      onClick={() => setAntiguaLang("en")}
-                      sx={{
-                        fontSize: "0.85rem",
-                        fontWeight: antiguaLang === "en" ? 700 : 500,
-                        color: antiguaLang === "en" ? "#C8A96B" : "#555",
-                        cursor: "pointer",
-                        px: 1.5,
-                        py: 0.5,
-                        borderRadius: 1,
-                        transition: "all 0.2s ease",
-                        letterSpacing: 1,
-                        "&:hover": { color: "#C8A96B" },
-                        userSelect: "none",
-                      }}
-                    >
-                      ENGLISH
-                    </MKBox>
-                  </MKBox>
-                  <MenuFlipbook foodPages={antiguaFoodPages} winePages={antiguaVinos} />
-                </>
               ) : (
                 <>
                   <AppBar position="static" color="transparent" sx={{ mb: 4, bgcolor: "transparent", boxShadow: "none" }}>
@@ -293,6 +227,15 @@ function Menus() {
               )}
             </Grid>
           </Grid>
+
+          <MKBox mt={6} p={4} borderRadius="xl" sx={{ textAlign: "center", backgroundColor: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
+            <MKTypography variant="h4" fontWeight="bold" color="dark" mb={2}>
+              {t('menus.antiguaClosed')}
+            </MKTypography>
+            <MKTypography variant="body1" color="text" sx={{ maxWidth: 600, mx: "auto" }}>
+              {t('menus.antiguaClosedDesc')}
+            </MKTypography>
+          </MKBox>
         </Container>
       </Card>
       <MKBox pt={6} px={1}>

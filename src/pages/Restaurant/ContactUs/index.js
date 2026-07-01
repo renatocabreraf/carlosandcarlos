@@ -169,12 +169,31 @@ function ContactUs() {
 
               <MKBox mb={3}>
                 <MKTypography variant="button" fontWeight="bold" display="block" mb={0.5}>
-                  Antigua Guatemala
+                  Antigua Guatemala{' '}
+                  <MKBox
+                    component="span"
+                    display="inline-block"
+                    ml={1}
+                    px={1}
+                    py={0.2}
+                    sx={{
+                      backgroundColor: "#C8A96B",
+                      color: "#111",
+                      borderRadius: "3px",
+                      fontSize: "0.6rem",
+                      fontWeight: 700,
+                      letterSpacing: 1,
+                      textTransform: "uppercase",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    {t('nav.comingSoon')}
+                  </MKBox>
                 </MKTypography>
-                <MKTypography variant="caption" color="text">
-                  4ta. Avenida Sur C.1, Antigua Guatemala, Sacatep&eacute;quez
+                <MKTypography variant="caption" color="text" display="block" sx={{ fontStyle: "italic" }}>
+                  {t('home.locations.comingSoonNote')}
                 </MKTypography>
-                <MKTypography variant="caption" color="text" component="a" href="mailto:restaurante@carlosandcarlosantigua.com" display="block">
+                <MKTypography variant="caption" color="text" component="a" href="mailto:restaurante@carlosandcarlosantigua.com" display="block" mt={1}>
                   restaurante@carlosandcarlosantigua.com
                 </MKTypography>
               </MKBox>

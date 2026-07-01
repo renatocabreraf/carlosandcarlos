@@ -350,7 +350,7 @@ function Home() {
               <Grid item xs={12} md={4}>
                 <FilledInfoCard
                   variant="gradient"
-                  color="info"
+                  color="dark"
                   icon="location_on"
                   title={
                     <span>
@@ -360,7 +360,31 @@ function Home() {
                       </span>
                     </span>
                   }
-                  description={t('home.locations.antiguaDesc')}
+                  description={
+                    <MKBox textAlign="center">
+                      <MKBox
+                        component="span"
+                        display="inline-block"
+                        mb={1}
+                        px={1.5}
+                        py={0.3}
+                        sx={{
+                          backgroundColor: "#C8A96B",
+                          color: "#111",
+                          borderRadius: "4px",
+                          fontSize: "0.7rem",
+                          fontWeight: 700,
+                          letterSpacing: 1,
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {t('nav.comingSoon')}
+                      </MKBox>
+                      <MKTypography variant="caption" display="block" color="text" sx={{ fontStyle: "italic" }}>
+                        {t('home.locations.comingSoonNote')}
+                      </MKTypography>
+                    </MKBox>
+                  }
                   action={{
                     type: "internal",
                     route: "/pages/restaurant/locations/antigua",

@@ -67,18 +67,12 @@ const allLocations = [
     id: "antigua",
     city: "Antigua Guatemala",
     country: "Guatemala",
-    address: "4ta. Avenida Sur C.1",
-    cityDetail: "Antigua Guatemala, Sacatepéquez, Guatemala C.A.",
+    closed: true,
     phone: "+502 7872 2432",
     whatsapp: "+502 3989 9709",
     email: "restaurante@carlosandcarlosantigua.com",
-    coordinates: { lat: 14.5545, lng: -90.7332 },
-    hours: [
-      "Martes a Domingo: 15:00 - 22:00",
-      "Lunes: Cerrado",
-    ],
     story:
-      "Carlos & Carlos Antigua abrió sus puertas el 12 de enero de 2023, ofreciendo una variedad de platillos de alta calidad, una extensa selección de vinos y ampliando un legado de reconocimiento internacional.",
+      "Carlos & Carlos Antigua está reubicándose a una nueva ubicación dentro de la ciudad. ¡Abrimos pronto! Agradecemos su paciencia y apoyo.",
     hero: antiguaHero,
     image: antiguaImg,
     logo: antiguaLogo,
@@ -229,16 +223,18 @@ function Locations() {
                 </MKBox>
               </MKBox>
 
-              <MKBox display="flex" alignItems="flex-start" mb={2}>
-                <Icon fontSize="small" color="info" sx={{ mr: 1, mt: 0.3 }}>
-                  place
-                </Icon>
-                <MKTypography variant="body2" color="white">
-                  {loc.address}
-                  <br />
-                  {loc.cityDetail}
-                </MKTypography>
-              </MKBox>
+              {!loc.closed && (
+                <MKBox display="flex" alignItems="flex-start" mb={2}>
+                  <Icon fontSize="small" color="info" sx={{ mr: 1, mt: 0.3 }}>
+                    place
+                  </Icon>
+                  <MKTypography variant="body2" color="white">
+                    {loc.address}
+                    <br />
+                    {loc.cityDetail}
+                  </MKTypography>
+                </MKBox>
+              )}
 
               <MKBox display="flex" alignItems="center" mb={1}>
                 <Icon fontSize="small" color="info" sx={{ mr: 1 }}>
@@ -310,58 +306,64 @@ function Locations() {
                 </MKBox>
               )}
 
-              <MKBox
-                sx={{
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  borderRadius: "12px",
-                  p: 2,
-                  mt: 2,
-                  mb: 2,
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <MKTypography variant="caption" fontWeight="bold" display="block" mb={0.5} color="white">
-                  {t('locations.hours')}
-                </MKTypography>
-                {loc.hours.map((h, i) => (
-                  <MKTypography key={i} variant="caption" color="white" display="block" opacity={0.8}>
-                    {h}
+              {!loc.closed && (
+                <MKBox
+                  sx={{
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    borderRadius: "12px",
+                    p: 2,
+                    mt: 2,
+                    mb: 2,
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <MKTypography variant="caption" fontWeight="bold" display="block" mb={0.5} color="white">
+                    {t('locations.hours')}
                   </MKTypography>
-                ))}
-              </MKBox>
+                  {loc.hours.map((h, i) => (
+                    <MKTypography key={i} variant="caption" color="white" display="block" opacity={0.8}>
+                      {h}
+                    </MKTypography>
+                  ))}
+                </MKBox>
+              )}
 
-              <MKBox
-                borderRadius="12px"
-                overflow="hidden"
-                mb={2}
-                sx={{
-                  width: "100%",
-                  height: 220,
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <iframe
-                  src={mapSrc(loc)}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  title={`Map of ${loc.city}`}
-                />
-              </MKBox>
+              {!loc.closed && (
+                <MKBox
+                  borderRadius="12px"
+                  overflow="hidden"
+                  mb={2}
+                  sx={{
+                    width: "100%",
+                    height: 220,
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <iframe
+                    src={mapSrc(loc)}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    title={`Map of ${loc.city}`}
+                  />
+                </MKBox>
+              )}
 
-              <MKButton
-                component="a"
-                href={getDirectionsUrl(loc)}
-                target="_blank"
-                variant="gradient"
-                color="info"
-                size="small"
-                sx={{ mr: 1 }}
-              >
-                Get Directions
-              </MKButton>
+              {!loc.closed && (
+                <MKButton
+                  component="a"
+                  href={getDirectionsUrl(loc)}
+                  target="_blank"
+                  variant="gradient"
+                  color="info"
+                  size="small"
+                  sx={{ mr: 1 }}
+                >
+                  Get Directions
+                </MKButton>
+              )}
               <MKButton
                 component="a"
                 href={`tel:${loc.phone}`}
@@ -373,6 +375,32 @@ function Locations() {
               </MKButton>
             </Grid>
           </Grid>
+
+          {loc.closed && (
+            <Grid container justifyContent="center" sx={{ mt: 6 }}>
+              <Grid item xs={12} lg={8}>
+                <MKBox
+                  p={4}
+                  borderRadius="xl"
+                  sx={{ textAlign: "center", backgroundColor: "rgba(200,169,107,0.1)", border: "1px solid rgba(200,169,107,0.3)" }}
+                >
+                  <MKBadge
+                    variant="contained"
+                    color="info"
+                    badgeContent={t('nav.comingSoon')}
+                    container
+                    sx={{ mb: 2 }}
+                  />
+                  <MKTypography variant="h5" fontWeight="bold" color="white" mb={2}>
+                    {t('locations.antiguaClosed')}
+                  </MKTypography>
+                  <MKTypography variant="body1" color="white" opacity={0.85} sx={{ maxWidth: 500, mx: "auto" }}>
+                    {t('locations.antiguaClosedDesc')}
+                  </MKTypography>
+                </MKBox>
+              </Grid>
+            </Grid>
+          )}
 
           <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
             <Grid

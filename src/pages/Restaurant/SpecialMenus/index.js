@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLanguage } from "i18n/context";
 
 import Container from "@mui/material/Container";
@@ -17,16 +16,8 @@ import brandLogo from "assets/images/logos/brand.png";
 
 import bgImage from "assets/images/restaurant/antigua/c-c-desayunos-109.jpg";
 
-import MenuFlipbook from "../Menus/MenuFlipbook";
-
-import specialEs from "assets/images/restaurant/antigua-menu/espanol/Menú económico_WEB-1_page-0001.jpg";
-import specialEn from "assets/images/restaurant/antigua-menu/ingles/Menú económico_WEB-2_page-0001.jpg";
-
 function SpecialMenus() {
   const { t } = useLanguage();
-  const [lang, setLang] = useState("es");
-
-  const pages = lang === "es" ? [specialEs] : [specialEn];
 
   return (
     <>
@@ -94,50 +85,14 @@ function SpecialMenus() {
         <Container sx={{ mt: 4, mb: 6 }}>
           <Grid container justifyContent="center">
             <Grid item xs={12} lg={8}>
-              <MKBox display="flex" justifyContent="center" mb={3} sx={{ gap: 1 }}>
-                <MKBox
-                  component="span"
-                  onClick={() => setLang("es")}
-                  sx={{
-                    fontSize: "0.85rem",
-                    fontWeight: lang === "es" ? 700 : 500,
-                    color: lang === "es" ? "#C8A96B" : "#555",
-                    cursor: "pointer",
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: 1,
-                    transition: "all 0.2s ease",
-                    letterSpacing: 1,
-                    "&:hover": { color: "#C8A96B" },
-                    userSelect: "none",
-                  }}
-                >
-                  ESPAÑOL
-                </MKBox>
-                <MKTypography variant="caption" sx={{ color: "#999", lineHeight: "28px" }}>
-                  |
+              <MKBox p={6} borderRadius="xl" sx={{ textAlign: "center", backgroundColor: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                <MKTypography variant="h3" fontWeight="bold" color="dark" mb={3}>
+                  {t('specialMenus.comingSoon')}
                 </MKTypography>
-                <MKBox
-                  component="span"
-                  onClick={() => setLang("en")}
-                  sx={{
-                    fontSize: "0.85rem",
-                    fontWeight: lang === "en" ? 700 : 500,
-                    color: lang === "en" ? "#C8A96B" : "#555",
-                    cursor: "pointer",
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: 1,
-                    transition: "all 0.2s ease",
-                    letterSpacing: 1,
-                    "&:hover": { color: "#C8A96B" },
-                    userSelect: "none",
-                  }}
-                >
-                  ENGLISH
-                </MKBox>
+                <MKTypography variant="h6" color="text" sx={{ maxWidth: 500, mx: "auto", lineHeight: 1.8 }}>
+                  {t('specialMenus.comingSoonDesc')}
+                </MKTypography>
               </MKBox>
-              <MenuFlipbook foodPages={pages} />
             </Grid>
           </Grid>
         </Container>
