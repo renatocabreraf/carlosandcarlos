@@ -31,11 +31,12 @@ import food3 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page
 import food4 from "assets/images/restaurant/chicago/SIN GUIAS_Menú Chicago_page-0004.jpg";
 import wine1 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0001.jpg";
 import wine2 from "assets/images/restaurant/arlington-menu/wine/EDITABLE_Menú Chicago vinos2_page-0002.jpg";
-import wm1 from "assets/images/restaurant/wilmette-menu/food/wilmette.jpg";
+import wm1 from "assets/images/restaurant/wilmette-menu/Menú Wilmette_web_page-0001.jpg";
+import wm2 from "assets/images/restaurant/wilmette-menu/Menú Wilmette_web_page-0002.jpg";
 
 const arlingtonFoodPages = [food1, food2, food3, food4];
 const arlingtonWinePages = [wine1, wine2];
-const wilmetteFoodPages = [wm1];
+const wilmetteFoodPages = [wm1, wm2];
 
 const locations = [
   { label: "Arlington Heights, IL", key: "chicago", flipbook: true, data: chicagoMenu, note: "Gluten free +$3. Splits +$3. 20% gratuity for parties of 6+." },
